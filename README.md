@@ -8,4 +8,4 @@ If you have any questions, make sure to go to www.discord.me/tds-productions (or
 Fore more info, you can access the Minecraft Sparkling Server Hosting tool wiki here: https://github.com/The-Diamond-Sword-Productions/Minecraft-Server-Hosting-Tool/wiki
 
 OLD VERSIONS OF THE PROGRAM CAN BE FOUND HERE! : https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/releases
-(But we don't reccomend them)
+(But we don't recommend them)
