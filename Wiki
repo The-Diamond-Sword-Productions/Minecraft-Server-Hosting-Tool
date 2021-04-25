@@ -17,7 +17,7 @@ To edit your server whiteList, simply go to the Server Options tab, and click on
 ### whitelist.json
 -------------------
 ### SparklingIsGood
-### CassioTDS
+### CassioTDS [ParentProfanities]
 -------------------
 This is a whitelist which only lets SparklingIsGood and CassioTDS access the server. **Make sure to whitelist yourself**
 To add someone to your whitelist, enter his name in the text box and click on add. To delete someone from your whitelist, sélect him and click on delete. Make sure you save the whitelist by clicking on the Save button.
