@@ -62,6 +62,12 @@
             this.installStatusLbl = new System.Windows.Forms.Label();
             this.installProgressBar = new System.Windows.Forms.ProgressBar();
             this.noEditWhileInstallPan = new System.Windows.Forms.Panel();
+            this.serverNameSetLbl = new System.Windows.Forms.Label();
+            this.serverName = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.autoDirectoryLbl = new System.Windows.Forms.Label();
+            this.autoDirectory = new System.Windows.Forms.CheckBox();
             this.serverInstallPath = new System.Windows.Forms.TextBox();
             this.installNewServerBtn = new System.Windows.Forms.Button();
             this.installServPanLbl = new System.Windows.Forms.Label();
@@ -199,14 +205,14 @@
             this.sideBar.Controls.Add(this.browseServsBtn);
             this.sideBar.Location = new System.Drawing.Point(0, 34);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(184, 435);
+            this.sideBar.Size = new System.Drawing.Size(184, 562);
             this.sideBar.TabIndex = 4;
             // 
             // serverPropertiesBtn
             // 
             this.serverPropertiesBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.serverPropertiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.serverPropertiesBtn.Location = new System.Drawing.Point(-1, 151);
+            this.serverPropertiesBtn.Location = new System.Drawing.Point(-1, 213);
             this.serverPropertiesBtn.Name = "serverPropertiesBtn";
             this.serverPropertiesBtn.Size = new System.Drawing.Size(184, 23);
             this.serverPropertiesBtn.TabIndex = 24;
@@ -217,7 +223,7 @@
             // 
             this.reinstallServerBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.reinstallServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reinstallServerBtn.Location = new System.Drawing.Point(-1, 411);
+            this.reinstallServerBtn.Location = new System.Drawing.Point(-1, 538);
             this.reinstallServerBtn.Name = "reinstallServerBtn";
             this.reinstallServerBtn.Size = new System.Drawing.Size(184, 23);
             this.reinstallServerBtn.TabIndex = 23;
@@ -227,7 +233,7 @@
             // moreLbl
             // 
             this.moreLbl.AutoSize = true;
-            this.moreLbl.Location = new System.Drawing.Point(74, 394);
+            this.moreLbl.Location = new System.Drawing.Point(74, 511);
             this.moreLbl.Name = "moreLbl";
             this.moreLbl.Size = new System.Drawing.Size(37, 13);
             this.moreLbl.TabIndex = 22;
@@ -237,7 +243,7 @@
             // 
             this.managePluginsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.managePluginsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.managePluginsBtn.Location = new System.Drawing.Point(-1, 368);
+            this.managePluginsBtn.Location = new System.Drawing.Point(-1, 474);
             this.managePluginsBtn.Name = "managePluginsBtn";
             this.managePluginsBtn.Size = new System.Drawing.Size(184, 23);
             this.managePluginsBtn.TabIndex = 21;
@@ -247,7 +253,7 @@
             // pluginsLbl
             // 
             this.pluginsLbl.AutoSize = true;
-            this.pluginsLbl.Location = new System.Drawing.Point(70, 351);
+            this.pluginsLbl.Location = new System.Drawing.Point(70, 446);
             this.pluginsLbl.Name = "pluginsLbl";
             this.pluginsLbl.Size = new System.Drawing.Size(47, 13);
             this.pluginsLbl.TabIndex = 20;
@@ -257,7 +263,7 @@
             // 
             this.backupsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.backupsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backupsBtn.Location = new System.Drawing.Point(-1, 217);
+            this.backupsBtn.Location = new System.Drawing.Point(-1, 279);
             this.backupsBtn.Name = "backupsBtn";
             this.backupsBtn.Size = new System.Drawing.Size(184, 23);
             this.backupsBtn.TabIndex = 19;
@@ -268,7 +274,7 @@
             // 
             this.consoleBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.consoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.consoleBtn.Location = new System.Drawing.Point(-1, 173);
+            this.consoleBtn.Location = new System.Drawing.Point(-1, 235);
             this.consoleBtn.Name = "consoleBtn";
             this.consoleBtn.Size = new System.Drawing.Size(184, 23);
             this.consoleBtn.TabIndex = 18;
@@ -279,7 +285,7 @@
             // 
             this.worldsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.worldsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.worldsBtn.Location = new System.Drawing.Point(-1, 195);
+            this.worldsBtn.Location = new System.Drawing.Point(-1, 257);
             this.worldsBtn.Name = "worldsBtn";
             this.worldsBtn.Size = new System.Drawing.Size(184, 23);
             this.worldsBtn.TabIndex = 17;
@@ -290,7 +296,7 @@
             // 
             this.banListBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.banListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.banListBtn.Location = new System.Drawing.Point(-1, 326);
+            this.banListBtn.Location = new System.Drawing.Point(-1, 410);
             this.banListBtn.Name = "banListBtn";
             this.banListBtn.Size = new System.Drawing.Size(184, 23);
             this.banListBtn.TabIndex = 16;
@@ -301,7 +307,7 @@
             // 
             this.whiteListBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.whiteListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.whiteListBtn.Location = new System.Drawing.Point(-1, 304);
+            this.whiteListBtn.Location = new System.Drawing.Point(-1, 388);
             this.whiteListBtn.Name = "whiteListBtn";
             this.whiteListBtn.Size = new System.Drawing.Size(184, 23);
             this.whiteListBtn.TabIndex = 15;
@@ -312,7 +318,7 @@
             // 
             this.operatorsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.operatorsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.operatorsBtn.Location = new System.Drawing.Point(-1, 282);
+            this.operatorsBtn.Location = new System.Drawing.Point(-1, 366);
             this.operatorsBtn.Name = "operatorsBtn";
             this.operatorsBtn.Size = new System.Drawing.Size(184, 23);
             this.operatorsBtn.TabIndex = 14;
@@ -322,7 +328,7 @@
             // playersLbl
             // 
             this.playersLbl.AutoSize = true;
-            this.playersLbl.Location = new System.Drawing.Point(70, 243);
+            this.playersLbl.Location = new System.Drawing.Point(70, 316);
             this.playersLbl.Name = "playersLbl";
             this.playersLbl.Size = new System.Drawing.Size(47, 13);
             this.playersLbl.TabIndex = 13;
@@ -332,7 +338,7 @@
             // 
             this.onlinePlayersBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.onlinePlayersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.onlinePlayersBtn.Location = new System.Drawing.Point(-1, 260);
+            this.onlinePlayersBtn.Location = new System.Drawing.Point(-1, 344);
             this.onlinePlayersBtn.Name = "onlinePlayersBtn";
             this.onlinePlayersBtn.Size = new System.Drawing.Size(184, 23);
             this.onlinePlayersBtn.TabIndex = 12;
@@ -343,7 +349,7 @@
             // 
             this.servFilesBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.servFilesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.servFilesBtn.Location = new System.Drawing.Point(-1, 129);
+            this.servFilesBtn.Location = new System.Drawing.Point(-1, 191);
             this.servFilesBtn.Name = "servFilesBtn";
             this.servFilesBtn.Size = new System.Drawing.Size(184, 23);
             this.servFilesBtn.TabIndex = 11;
@@ -353,7 +359,7 @@
             // createServLbl
             // 
             this.createServLbl.AutoSize = true;
-            this.createServLbl.Location = new System.Drawing.Point(26, 4);
+            this.createServLbl.Location = new System.Drawing.Point(26, 12);
             this.createServLbl.Name = "createServLbl";
             this.createServLbl.Size = new System.Drawing.Size(132, 13);
             this.createServLbl.TabIndex = 10;
@@ -363,7 +369,7 @@
             // 
             this.installServBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.installServBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.installServBtn.Location = new System.Drawing.Point(-1, 21);
+            this.installServBtn.Location = new System.Drawing.Point(-1, 39);
             this.installServBtn.Name = "installServBtn";
             this.installServBtn.Size = new System.Drawing.Size(184, 23);
             this.installServBtn.TabIndex = 9;
@@ -374,7 +380,7 @@
             // editServLbl
             // 
             this.editServLbl.AutoSize = true;
-            this.editServLbl.Location = new System.Drawing.Point(37, 90);
+            this.editServLbl.Location = new System.Drawing.Point(37, 141);
             this.editServLbl.Name = "editServLbl";
             this.editServLbl.Size = new System.Drawing.Size(110, 13);
             this.editServLbl.TabIndex = 8;
@@ -383,7 +389,7 @@
             // selectServLbl
             // 
             this.selectServLbl.AutoSize = true;
-            this.selectServLbl.Location = new System.Drawing.Point(39, 47);
+            this.selectServLbl.Location = new System.Drawing.Point(39, 76);
             this.selectServLbl.Name = "selectServLbl";
             this.selectServLbl.Size = new System.Drawing.Size(108, 13);
             this.selectServLbl.TabIndex = 6;
@@ -393,7 +399,7 @@
             // 
             this.editLaunchOptBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.editLaunchOptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editLaunchOptBtn.Location = new System.Drawing.Point(-1, 107);
+            this.editLaunchOptBtn.Location = new System.Drawing.Point(-1, 169);
             this.editLaunchOptBtn.Name = "editLaunchOptBtn";
             this.editLaunchOptBtn.Size = new System.Drawing.Size(184, 23);
             this.editLaunchOptBtn.TabIndex = 7;
@@ -405,7 +411,7 @@
             // 
             this.browseServsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.browseServsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.browseServsBtn.Location = new System.Drawing.Point(-1, 64);
+            this.browseServsBtn.Location = new System.Drawing.Point(-1, 104);
             this.browseServsBtn.Name = "browseServsBtn";
             this.browseServsBtn.Size = new System.Drawing.Size(184, 23);
             this.browseServsBtn.TabIndex = 6;
@@ -432,7 +438,7 @@
             this.MainTabControl.Location = new System.Drawing.Point(206, 25);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(600, 452);
+            this.MainTabControl.Size = new System.Drawing.Size(600, 575);
             this.MainTabControl.TabIndex = 8;
             // 
             // installServTab
@@ -443,7 +449,7 @@
             this.installServTab.Location = new System.Drawing.Point(4, 22);
             this.installServTab.Name = "installServTab";
             this.installServTab.Padding = new System.Windows.Forms.Padding(3);
-            this.installServTab.Size = new System.Drawing.Size(592, 426);
+            this.installServTab.Size = new System.Drawing.Size(592, 549);
             this.installServTab.TabIndex = 0;
             this.installServTab.Text = "install";
             // 
@@ -452,7 +458,7 @@
             this.installProgressGrouBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.installProgressGrouBox.Controls.Add(this.installStatusLbl);
             this.installProgressGrouBox.Controls.Add(this.installProgressBar);
-            this.installProgressGrouBox.Location = new System.Drawing.Point(9, 337);
+            this.installProgressGrouBox.Location = new System.Drawing.Point(9, 470);
             this.installProgressGrouBox.Name = "installProgressGrouBox";
             this.installProgressGrouBox.Size = new System.Drawing.Size(575, 75);
             this.installProgressGrouBox.TabIndex = 23;
@@ -478,6 +484,12 @@
             // noEditWhileInstallPan
             // 
             this.noEditWhileInstallPan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.noEditWhileInstallPan.Controls.Add(this.serverNameSetLbl);
+            this.noEditWhileInstallPan.Controls.Add(this.serverName);
+            this.noEditWhileInstallPan.Controls.Add(this.panel4);
+            this.noEditWhileInstallPan.Controls.Add(this.panel3);
+            this.noEditWhileInstallPan.Controls.Add(this.autoDirectoryLbl);
+            this.noEditWhileInstallPan.Controls.Add(this.autoDirectory);
             this.noEditWhileInstallPan.Controls.Add(this.serverInstallPath);
             this.noEditWhileInstallPan.Controls.Add(this.installNewServerBtn);
             this.noEditWhileInstallPan.Controls.Add(this.installServPanLbl);
@@ -495,8 +507,61 @@
             this.noEditWhileInstallPan.Controls.Add(this.serverInstallVersion);
             this.noEditWhileInstallPan.Location = new System.Drawing.Point(3, 0);
             this.noEditWhileInstallPan.Name = "noEditWhileInstallPan";
-            this.noEditWhileInstallPan.Size = new System.Drawing.Size(586, 331);
+            this.noEditWhileInstallPan.Size = new System.Drawing.Size(586, 458);
             this.noEditWhileInstallPan.TabIndex = 0;
+            // 
+            // serverNameSetLbl
+            // 
+            this.serverNameSetLbl.AutoSize = true;
+            this.serverNameSetLbl.Location = new System.Drawing.Point(6, 122);
+            this.serverNameSetLbl.Name = "serverNameSetLbl";
+            this.serverNameSetLbl.Size = new System.Drawing.Size(73, 13);
+            this.serverNameSetLbl.TabIndex = 33;
+            this.serverNameSetLbl.Text = "Server name :";
+            // 
+            // serverName
+            // 
+            this.serverName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.serverName.Location = new System.Drawing.Point(6, 141);
+            this.serverName.Name = "serverName";
+            this.serverName.Size = new System.Drawing.Size(577, 20);
+            this.serverName.TabIndex = 32;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(1, 347);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(586, 2);
+            this.panel4.TabIndex = 31;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(0, 179);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(586, 2);
+            this.panel3.TabIndex = 30;
+            // 
+            // autoDirectoryLbl
+            // 
+            this.autoDirectoryLbl.AutoSize = true;
+            this.autoDirectoryLbl.Location = new System.Drawing.Point(6, 75);
+            this.autoDirectoryLbl.Name = "autoDirectoryLbl";
+            this.autoDirectoryLbl.Size = new System.Drawing.Size(65, 13);
+            this.autoDirectoryLbl.TabIndex = 24;
+            this.autoDirectoryLbl.Text = "Or you can :";
+            // 
+            // autoDirectory
+            // 
+            this.autoDirectory.AutoSize = true;
+            this.autoDirectory.Location = new System.Drawing.Point(7, 92);
+            this.autoDirectory.Name = "autoDirectory";
+            this.autoDirectory.Size = new System.Drawing.Size(224, 17);
+            this.autoDirectory.TabIndex = 23;
+            this.autoDirectory.Text = "Let us choose the directory for your server";
+            this.autoDirectory.UseVisualStyleBackColor = true;
+            this.autoDirectory.CheckedChanged += new System.EventHandler(this.autoDirectory_CheckedChanged);
             // 
             // serverInstallPath
             // 
@@ -509,7 +574,7 @@
             // installNewServerBtn
             // 
             this.installNewServerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.installNewServerBtn.Location = new System.Drawing.Point(208, 286);
+            this.installNewServerBtn.Location = new System.Drawing.Point(208, 419);
             this.installNewServerBtn.Name = "installNewServerBtn";
             this.installNewServerBtn.Size = new System.Drawing.Size(145, 23);
             this.installNewServerBtn.TabIndex = 22;
@@ -532,7 +597,7 @@
             // 
             this.GBradioBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.GBradioBtn.AutoSize = true;
-            this.GBradioBtn.Location = new System.Drawing.Point(406, 250);
+            this.GBradioBtn.Location = new System.Drawing.Point(406, 386);
             this.GBradioBtn.Name = "GBradioBtn";
             this.GBradioBtn.Size = new System.Drawing.Size(40, 17);
             this.GBradioBtn.TabIndex = 21;
@@ -555,7 +620,7 @@
             this.MBradioBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MBradioBtn.AutoSize = true;
             this.MBradioBtn.Checked = true;
-            this.MBradioBtn.Location = new System.Drawing.Point(406, 229);
+            this.MBradioBtn.Location = new System.Drawing.Point(406, 365);
             this.MBradioBtn.Name = "MBradioBtn";
             this.MBradioBtn.Size = new System.Drawing.Size(41, 17);
             this.MBradioBtn.TabIndex = 20;
@@ -569,7 +634,7 @@
             this.browseServerInstallPathBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.browseServerInstallPathBtn.BackColor = System.Drawing.Color.LightGray;
             this.browseServerInstallPathBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.browseServerInstallPathBtn.Location = new System.Drawing.Point(510, 51);
+            this.browseServerInstallPathBtn.Location = new System.Drawing.Point(508, 51);
             this.browseServerInstallPathBtn.Name = "browseServerInstallPathBtn";
             this.browseServerInstallPathBtn.Size = new System.Drawing.Size(75, 22);
             this.browseServerInstallPathBtn.TabIndex = 10;
@@ -603,7 +668,7 @@
             "18432",
             "19456",
             "20480"});
-            this.allocatedRam.Location = new System.Drawing.Point(279, 237);
+            this.allocatedRam.Location = new System.Drawing.Point(279, 373);
             this.allocatedRam.Name = "allocatedRam";
             this.allocatedRam.Size = new System.Drawing.Size(121, 21);
             this.allocatedRam.TabIndex = 19;
@@ -613,7 +678,7 @@
             // 
             this.serverInstallTypeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.serverInstallTypeLbl.AutoSize = true;
-            this.serverInstallTypeLbl.Location = new System.Drawing.Point(71, 95);
+            this.serverInstallTypeLbl.Location = new System.Drawing.Point(71, 203);
             this.serverInstallTypeLbl.Name = "serverInstallTypeLbl";
             this.serverInstallTypeLbl.Size = new System.Drawing.Size(37, 13);
             this.serverInstallTypeLbl.TabIndex = 12;
@@ -623,7 +688,7 @@
             // 
             this.allocatedRamLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.allocatedRamLbl.AutoSize = true;
-            this.allocatedRamLbl.Location = new System.Drawing.Point(119, 240);
+            this.allocatedRamLbl.Location = new System.Drawing.Point(119, 376);
             this.allocatedRamLbl.Name = "allocatedRamLbl";
             this.allocatedRamLbl.Size = new System.Drawing.Size(154, 13);
             this.allocatedRamLbl.TabIndex = 18;
@@ -640,7 +705,7 @@
             "Paper (for plugins & performance)",
             "CraftBukkit (for plugins & performance)",
             "Forge (for mods)"});
-            this.serverInstallType.Location = new System.Drawing.Point(113, 92);
+            this.serverInstallType.Location = new System.Drawing.Point(113, 200);
             this.serverInstallType.Name = "serverInstallType";
             this.serverInstallType.Size = new System.Drawing.Size(208, 21);
             this.serverInstallType.TabIndex = 13;
@@ -650,7 +715,7 @@
             // 
             this.dragDropCustomServ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dragDropCustomServ.AutoSize = true;
-            this.dragDropCustomServ.Location = new System.Drawing.Point(12, 134);
+            this.dragDropCustomServ.Location = new System.Drawing.Point(12, 246);
             this.dragDropCustomServ.Name = "dragDropCustomServ";
             this.dragDropCustomServ.Size = new System.Drawing.Size(565, 13);
             this.dragDropCustomServ.TabIndex = 17;
@@ -661,7 +726,7 @@
             // 
             this.serverInstallVersionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.serverInstallVersionLbl.AutoSize = true;
-            this.serverInstallVersionLbl.Location = new System.Drawing.Point(327, 96);
+            this.serverInstallVersionLbl.Location = new System.Drawing.Point(327, 204);
             this.serverInstallVersionLbl.Name = "serverInstallVersionLbl";
             this.serverInstallVersionLbl.Size = new System.Drawing.Size(48, 13);
             this.serverInstallVersionLbl.TabIndex = 14;
@@ -671,7 +736,7 @@
             // 
             this.dragDropCustomServer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dragDropCustomServer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dragDropCustomServer.Location = new System.Drawing.Point(5, 150);
+            this.dragDropCustomServer.Location = new System.Drawing.Point(5, 262);
             this.dragDropCustomServer.Name = "dragDropCustomServer";
             this.dragDropCustomServer.Size = new System.Drawing.Size(577, 62);
             this.dragDropCustomServer.TabIndex = 16;
@@ -732,7 +797,7 @@
             "1.7.4",
             "1.7.3",
             "1.7.2"});
-            this.serverInstallVersion.Location = new System.Drawing.Point(381, 92);
+            this.serverInstallVersion.Location = new System.Drawing.Point(381, 200);
             this.serverInstallVersion.Name = "serverInstallVersion";
             this.serverInstallVersion.Size = new System.Drawing.Size(121, 21);
             this.serverInstallVersion.TabIndex = 15;
@@ -746,7 +811,7 @@
             this.welcomeTab.Location = new System.Drawing.Point(4, 22);
             this.welcomeTab.Name = "welcomeTab";
             this.welcomeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.welcomeTab.Size = new System.Drawing.Size(592, 426);
+            this.welcomeTab.Size = new System.Drawing.Size(592, 549);
             this.welcomeTab.TabIndex = 1;
             this.welcomeTab.Text = "welcome";
             // 
@@ -754,7 +819,7 @@
             // 
             this.importServerBtn.BackColor = System.Drawing.Color.LightGray;
             this.importServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importServerBtn.Location = new System.Drawing.Point(136, 382);
+            this.importServerBtn.Location = new System.Drawing.Point(138, 499);
             this.importServerBtn.Name = "importServerBtn";
             this.importServerBtn.Size = new System.Drawing.Size(329, 23);
             this.importServerBtn.TabIndex = 10;
@@ -793,7 +858,7 @@
             this.Start.Location = new System.Drawing.Point(4, 22);
             this.Start.Name = "Start";
             this.Start.Padding = new System.Windows.Forms.Padding(3);
-            this.Start.Size = new System.Drawing.Size(592, 426);
+            this.Start.Size = new System.Drawing.Size(592, 549);
             this.Start.TabIndex = 2;
             this.Start.Text = "Start";
             // 
@@ -808,7 +873,7 @@
             this.editServerStartOptionsGroupBox.Controls.Add(this.startGBradioBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRam);
             this.editServerStartOptionsGroupBox.Controls.Add(this.startMBradioBtn);
-            this.editServerStartOptionsGroupBox.Location = new System.Drawing.Point(103, 232);
+            this.editServerStartOptionsGroupBox.Location = new System.Drawing.Point(113, 348);
             this.editServerStartOptionsGroupBox.Name = "editServerStartOptionsGroupBox";
             this.editServerStartOptionsGroupBox.Size = new System.Drawing.Size(378, 164);
             this.editServerStartOptionsGroupBox.TabIndex = 26;
@@ -929,7 +994,7 @@
             this.startServerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.startServerBtn.BackColor = System.Drawing.Color.Lime;
             this.startServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startServerBtn.Location = new System.Drawing.Point(265, 161);
+            this.startServerBtn.Location = new System.Drawing.Point(265, 237);
             this.startServerBtn.Name = "startServerBtn";
             this.startServerBtn.Size = new System.Drawing.Size(75, 23);
             this.startServerBtn.TabIndex = 3;
@@ -954,7 +1019,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.serverNameLbl);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(77, 45);
+            this.panel1.Location = new System.Drawing.Point(80, 121);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(434, 100);
             this.panel1.TabIndex = 1;
@@ -994,7 +1059,7 @@
             // 
             this.hideBorderPan1.Location = new System.Drawing.Point(206, 34);
             this.hideBorderPan1.Name = "hideBorderPan1";
-            this.hideBorderPan1.Size = new System.Drawing.Size(7, 435);
+            this.hideBorderPan1.Size = new System.Drawing.Size(7, 562);
             this.hideBorderPan1.TabIndex = 16;
             // 
             // MainForm
@@ -1002,7 +1067,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 469);
+            this.ClientSize = new System.Drawing.Size(800, 596);
             this.Controls.Add(this.topLeftLogo);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.hideBorderPan1);
@@ -1110,6 +1175,12 @@
         private System.Windows.Forms.Button saveChangesServerStartOptionsBtn;
         private System.Windows.Forms.Button importServerBtn;
         private System.Windows.Forms.Panel separatorPanServerEditStartOptions;
+        private System.Windows.Forms.Label autoDirectoryLbl;
+        private System.Windows.Forms.CheckBox autoDirectory;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label serverNameSetLbl;
+        private System.Windows.Forms.TextBox serverName;
     }
 }
 
