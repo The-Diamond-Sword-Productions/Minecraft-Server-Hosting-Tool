@@ -96,6 +96,8 @@
             this.serverRunning = new System.Windows.Forms.Label();
             this.hideBorderPan1 = new System.Windows.Forms.Panel();
             this.saveChangesServerStartOptionsBtn = new System.Windows.Forms.Button();
+            this.importServerBtn = new System.Windows.Forms.Button();
+            this.separatorPanServerEditStartOptions = new System.Windows.Forms.Panel();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLeftLogo)).BeginInit();
             this.sideBar.SuspendLayout();
@@ -738,6 +740,7 @@
             // welcomeTab
             // 
             this.welcomeTab.BackColor = System.Drawing.Color.Silver;
+            this.welcomeTab.Controls.Add(this.importServerBtn);
             this.welcomeTab.Controls.Add(this.serversListLbl);
             this.welcomeTab.Controls.Add(this.welcomeLbl);
             this.welcomeTab.Location = new System.Drawing.Point(4, 22);
@@ -786,6 +789,7 @@
             // editServerStartOptionsGroupBox
             // 
             this.editServerStartOptionsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editServerStartOptionsGroupBox.Controls.Add(this.separatorPanServerEditStartOptions);
             this.editServerStartOptionsGroupBox.Controls.Add(this.saveChangesServerStartOptionsBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.startServerPropertiesBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.restartServerIfCrash);
@@ -965,6 +969,7 @@
             // saveChangesServerStartOptionsBtn
             // 
             this.saveChangesServerStartOptionsBtn.BackColor = System.Drawing.Color.LightGray;
+            this.saveChangesServerStartOptionsBtn.Enabled = false;
             this.saveChangesServerStartOptionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveChangesServerStartOptionsBtn.Location = new System.Drawing.Point(133, 135);
             this.saveChangesServerStartOptionsBtn.Name = "saveChangesServerStartOptionsBtn";
@@ -972,6 +977,25 @@
             this.saveChangesServerStartOptionsBtn.TabIndex = 28;
             this.saveChangesServerStartOptionsBtn.Text = "Save changes";
             this.saveChangesServerStartOptionsBtn.UseVisualStyleBackColor = false;
+            // 
+            // importServerBtn
+            // 
+            this.importServerBtn.BackColor = System.Drawing.Color.LightGray;
+            this.importServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.importServerBtn.Location = new System.Drawing.Point(136, 382);
+            this.importServerBtn.Name = "importServerBtn";
+            this.importServerBtn.Size = new System.Drawing.Size(329, 23);
+            this.importServerBtn.TabIndex = 10;
+            this.importServerBtn.Text = "Or you can import an existing server by clicking here";
+            this.importServerBtn.UseVisualStyleBackColor = false;
+            // 
+            // separatorPanServerEditStartOptions
+            // 
+            this.separatorPanServerEditStartOptions.BackColor = System.Drawing.Color.White;
+            this.separatorPanServerEditStartOptions.Location = new System.Drawing.Point(0, 126);
+            this.separatorPanServerEditStartOptions.Name = "separatorPanServerEditStartOptions";
+            this.separatorPanServerEditStartOptions.Size = new System.Drawing.Size(378, 5);
+            this.separatorPanServerEditStartOptions.TabIndex = 29;
             // 
             // MainForm
             // 
@@ -1084,6 +1108,8 @@
         private System.Windows.Forms.RadioButton startMBradioBtn;
         private System.Windows.Forms.Button startServerPropertiesBtn;
         private System.Windows.Forms.Button saveChangesServerStartOptionsBtn;
+        private System.Windows.Forms.Button importServerBtn;
+        private System.Windows.Forms.Panel separatorPanServerEditStartOptions;
     }
 }
 

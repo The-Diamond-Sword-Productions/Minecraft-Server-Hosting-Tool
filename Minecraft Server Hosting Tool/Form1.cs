@@ -892,17 +892,34 @@ namespace Minecraft_Server_Hosting_Tool
                     await sw.WriteLineAsync("announce-player-achievements=true");
             }
 
-            installStatusLbl.Text = "Generating eula file...";
+            installProgressBar.Value = 95;
+
+            installStatusLbl.Text = "Generating eula.txt file...";
 
             using (StreamWriter sw = File.CreateText(serverInstallPath.Text + @"\" + "eula.txt"))
             {
                 await sw.WriteLineAsync("eula=false");
             }
 
+            installProgressBar.Value = 97;
+
+            installStatusLbl.Text = "Generating run.bat file...";
+
+            string MG = "M";
+            if (GBradioBtn.Checked) { MG = "G"; }
+
+            using (StreamWriter sw = File.CreateText(serverInstallPath.Text + @"\" + "run.bat"))
+            {
+                await sw.WriteLineAsync("java -Xmx" + allocatedRam.Text + MG + " -jar server.jar nogui");
+                await sw.WriteLineAsync("PAUSE");
+            }
+
+            installProgressBar.Value = 100;
+
             noEditWhileInstallPan.Enabled = true;
             sideBar.Enabled = true;
             installing = false;
-            installStatusLbl.Text = "idle";
+            installStatusLbl.Text = "Done, idle";
         }
 
         private void serverInstallType_SelectedIndexChanged(object sender, EventArgs e)
