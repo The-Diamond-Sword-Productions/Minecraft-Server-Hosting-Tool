@@ -938,5 +938,20 @@ namespace Minecraft_Server_Hosting_Tool
                 serverInstallVersion.SelectedItem = "1.16.5";
             }
         }
+
+        private void restartServerIfCrash_CheckedChanged(object sender, EventArgs e)
+        {
+            if (restartServerIfCrash.Checked)
+            {
+                DialogResult confirm = MessageBox.Show("Are you sure you want to activate this options?\n\nThe /stop command will restart the server and not stop it.\n\nIf you want to stop the server, you will need to stop it via this tool.", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (confirm == DialogResult.Cancel)
+                    restartServerIfCrash.Checked = false;
+            }
+        }
+
+        private void editLaunchOptBtn_Click(object sender, EventArgs e)
+        {
+            MainTabControl.SelectedTab = Start;
+        }
     }
 }
