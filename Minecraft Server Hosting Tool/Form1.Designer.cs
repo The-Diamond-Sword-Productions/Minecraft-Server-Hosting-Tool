@@ -78,10 +78,13 @@
             this.dragDropCustomServer = new System.Windows.Forms.Panel();
             this.serverInstallVersion = new System.Windows.Forms.ComboBox();
             this.welcomeTab = new System.Windows.Forms.TabPage();
+            this.importServerBtn = new System.Windows.Forms.Button();
             this.serversListLbl = new System.Windows.Forms.Label();
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.TabPage();
             this.editServerStartOptionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.separatorPanServerEditStartOptions = new System.Windows.Forms.Panel();
+            this.saveChangesServerStartOptionsBtn = new System.Windows.Forms.Button();
             this.startServerPropertiesBtn = new System.Windows.Forms.Button();
             this.restartServerIfCrash = new System.Windows.Forms.CheckBox();
             this.serverStartAllocatedRamLbl = new System.Windows.Forms.Label();
@@ -95,9 +98,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.serverRunning = new System.Windows.Forms.Label();
             this.hideBorderPan1 = new System.Windows.Forms.Panel();
-            this.saveChangesServerStartOptionsBtn = new System.Windows.Forms.Button();
-            this.importServerBtn = new System.Windows.Forms.Button();
-            this.separatorPanServerEditStartOptions = new System.Windows.Forms.Panel();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLeftLogo)).BeginInit();
             this.sideBar.SuspendLayout();
@@ -750,6 +750,17 @@
             this.welcomeTab.TabIndex = 1;
             this.welcomeTab.Text = "welcome";
             // 
+            // importServerBtn
+            // 
+            this.importServerBtn.BackColor = System.Drawing.Color.LightGray;
+            this.importServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.importServerBtn.Location = new System.Drawing.Point(136, 382);
+            this.importServerBtn.Name = "importServerBtn";
+            this.importServerBtn.Size = new System.Drawing.Size(329, 23);
+            this.importServerBtn.TabIndex = 10;
+            this.importServerBtn.Text = "Or you can import an existing server by clicking here";
+            this.importServerBtn.UseVisualStyleBackColor = false;
+            // 
             // serversListLbl
             // 
             this.serversListLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -803,6 +814,26 @@
             this.editServerStartOptionsGroupBox.TabIndex = 26;
             this.editServerStartOptionsGroupBox.TabStop = false;
             this.editServerStartOptionsGroupBox.Text = "Edit server start options";
+            // 
+            // separatorPanServerEditStartOptions
+            // 
+            this.separatorPanServerEditStartOptions.BackColor = System.Drawing.Color.White;
+            this.separatorPanServerEditStartOptions.Location = new System.Drawing.Point(0, 126);
+            this.separatorPanServerEditStartOptions.Name = "separatorPanServerEditStartOptions";
+            this.separatorPanServerEditStartOptions.Size = new System.Drawing.Size(378, 2);
+            this.separatorPanServerEditStartOptions.TabIndex = 29;
+            // 
+            // saveChangesServerStartOptionsBtn
+            // 
+            this.saveChangesServerStartOptionsBtn.BackColor = System.Drawing.Color.LightGray;
+            this.saveChangesServerStartOptionsBtn.Enabled = false;
+            this.saveChangesServerStartOptionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveChangesServerStartOptionsBtn.Location = new System.Drawing.Point(133, 135);
+            this.saveChangesServerStartOptionsBtn.Name = "saveChangesServerStartOptionsBtn";
+            this.saveChangesServerStartOptionsBtn.Size = new System.Drawing.Size(127, 23);
+            this.saveChangesServerStartOptionsBtn.TabIndex = 28;
+            this.saveChangesServerStartOptionsBtn.Text = "Save changes";
+            this.saveChangesServerStartOptionsBtn.UseVisualStyleBackColor = false;
             // 
             // startServerPropertiesBtn
             // 
@@ -965,37 +996,6 @@
             this.hideBorderPan1.Name = "hideBorderPan1";
             this.hideBorderPan1.Size = new System.Drawing.Size(7, 435);
             this.hideBorderPan1.TabIndex = 16;
-            // 
-            // saveChangesServerStartOptionsBtn
-            // 
-            this.saveChangesServerStartOptionsBtn.BackColor = System.Drawing.Color.LightGray;
-            this.saveChangesServerStartOptionsBtn.Enabled = false;
-            this.saveChangesServerStartOptionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveChangesServerStartOptionsBtn.Location = new System.Drawing.Point(133, 135);
-            this.saveChangesServerStartOptionsBtn.Name = "saveChangesServerStartOptionsBtn";
-            this.saveChangesServerStartOptionsBtn.Size = new System.Drawing.Size(127, 23);
-            this.saveChangesServerStartOptionsBtn.TabIndex = 28;
-            this.saveChangesServerStartOptionsBtn.Text = "Save changes";
-            this.saveChangesServerStartOptionsBtn.UseVisualStyleBackColor = false;
-            // 
-            // importServerBtn
-            // 
-            this.importServerBtn.BackColor = System.Drawing.Color.LightGray;
-            this.importServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importServerBtn.Location = new System.Drawing.Point(136, 382);
-            this.importServerBtn.Name = "importServerBtn";
-            this.importServerBtn.Size = new System.Drawing.Size(329, 23);
-            this.importServerBtn.TabIndex = 10;
-            this.importServerBtn.Text = "Or you can import an existing server by clicking here";
-            this.importServerBtn.UseVisualStyleBackColor = false;
-            // 
-            // separatorPanServerEditStartOptions
-            // 
-            this.separatorPanServerEditStartOptions.BackColor = System.Drawing.Color.White;
-            this.separatorPanServerEditStartOptions.Location = new System.Drawing.Point(0, 126);
-            this.separatorPanServerEditStartOptions.Name = "separatorPanServerEditStartOptions";
-            this.separatorPanServerEditStartOptions.Size = new System.Drawing.Size(378, 5);
-            this.separatorPanServerEditStartOptions.TabIndex = 29;
             // 
             // MainForm
             // 

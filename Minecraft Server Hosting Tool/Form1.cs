@@ -973,7 +973,7 @@ namespace Minecraft_Server_Hosting_Tool
 
         private void startMBradioBtn_CheckedChanged(object sender, EventArgs e)
         {
-            if (MBradioBtn.Checked == true)
+            if (startMBradioBtn.Checked == true)
             {
                 if (Double.TryParse(allocatedRam.Text, out double parsedValue))
                 {
