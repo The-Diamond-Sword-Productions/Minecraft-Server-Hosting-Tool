@@ -755,7 +755,7 @@ namespace Minecraft_Server_Hosting_Tool
 
             using (StreamWriter sw = File.CreateText(serverInstallPath.Text + @"\" + "eula.txt"))
             {
-                await sw.WriteLineAsync("eula=true");
+                await sw.WriteLineAsync("eula=false");
             }
 
             noEditWhileInstallPan.Enabled = true;
