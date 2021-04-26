@@ -74,7 +74,7 @@ namespace Minecraft_Server_Hosting_Tool
             else
             {
                 MainTabControl.Location = new Point(206, 25);
-                MainTabControl.Size = new Size(600, 436);
+                MainTabControl.Size = new Size(600, MainTabControl.Size.Height);
                 hideBorderPan1.Location = new Point(206, 34);
                 t1.Tick += new EventHandler(showBar);
             }
@@ -93,7 +93,7 @@ namespace Minecraft_Server_Hosting_Tool
                 openSideBarBtn.Location = new Point(0, 34);
                 sideBar.Location = new Point(-184, 34);
                 MainTabControl.Location = new Point(23, 25);
-                MainTabControl.Size = new Size(783, 436);
+                MainTabControl.Size = new Size(783, MainTabControl.Size.Height);
                 hideBorderPan1.Location = new Point(23, 34);
                 t1.Tick -= new EventHandler(hideBar);
                 openSideBarBtn.Text = ">";
