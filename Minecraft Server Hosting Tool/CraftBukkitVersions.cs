@@ -21,14 +21,14 @@ namespace Minecraft_Server_Hosting_Tool
         public static CraftBukkitVersions oneSixteenFour = new CraftBukkitVersions("1.16.4", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.4.jar");
         public static CraftBukkitVersions oneSixteenThree = new CraftBukkitVersions("1.16.3", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.3.jar");
         public static CraftBukkitVersions oneSixteenTwo = new CraftBukkitVersions("1.16.2", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.2.jar");
-        public static CraftBukkitVersions oneSixteen = new CraftBukkitVersions("1.16.1", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.1.jar");
+        public static CraftBukkitVersions oneSixteenOne = new CraftBukkitVersions("1.16.1", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.1.jar");
 
         public static CraftBukkitVersions oneFifteenTwo = new CraftBukkitVersions("1.15.2", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15.2.jar");
         public static CraftBukkitVersions oneFifteenOne = new CraftBukkitVersions("1.15.1", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15.1-R0.1-SNAPSHOT.jar");
         public static CraftBukkitVersions oneFifteen = new CraftBukkitVersions("1.15", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15-R0.1-SNAPSHOT.jar");
 
         public static CraftBukkitVersions oneFourteenFour = new CraftBukkitVersions("1.14.4", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar");
-        public static CraftBukkitVersions oneFOurteenThree = new CraftBukkitVersions("1.14.3", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.3-R0.1-SNAPSHOT.jar");
+        public static CraftBukkitVersions oneFourteenThree = new CraftBukkitVersions("1.14.3", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.3-R0.1-SNAPSHOT.jar");
         public static CraftBukkitVersions oneFourteenTwo = new CraftBukkitVersions("1.14.2", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.2-R0.1-SNAPSHOT.jar");
         public static CraftBukkitVersions oneFourteenOne = new CraftBukkitVersions("1.14.1", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.1-R0.1-SNAPSHOT.jar");
         public static CraftBukkitVersions oneFourteen = new CraftBukkitVersions("1.14", "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14-R0.1-SNAPSHOT.jar");
