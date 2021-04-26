@@ -953,5 +953,71 @@ namespace Minecraft_Server_Hosting_Tool
         {
             MainTabControl.SelectedTab = Start;
         }
+
+        private void startMBradioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MBradioBtn.Checked == true)
+            {
+                if (Double.TryParse(allocatedRam.Text, out double parsedValue))
+                {
+                    double ram = Convert.ToDouble(serverStartAllocatedRam.Text);
+                    ram = ram * 1024;
+                    serverStartAllocatedRam.Text = Convert.ToString(ram);
+                }
+                serverStartAllocatedRam.Items.Clear();
+                serverStartAllocatedRam.Items.Add("512");
+                serverStartAllocatedRam.Items.Add("1024");
+                serverStartAllocatedRam.Items.Add("2048");
+                serverStartAllocatedRam.Items.Add("3072");
+                serverStartAllocatedRam.Items.Add("4096");
+                serverStartAllocatedRam.Items.Add("5120");
+                serverStartAllocatedRam.Items.Add("6144");
+                serverStartAllocatedRam.Items.Add("7168");
+                allocatedRam.Items.Add("8192");
+                serverStartAllocatedRam.Items.Add("9216");
+                serverStartAllocatedRam.Items.Add("10240");
+                serverStartAllocatedRam.Items.Add("11264");
+                serverStartAllocatedRam.Items.Add("12288");
+                serverStartAllocatedRam.Items.Add("13312");
+                serverStartAllocatedRam.Items.Add("14336");
+                serverStartAllocatedRam.Items.Add("15360");
+                serverStartAllocatedRam.Items.Add("16384");
+                serverStartAllocatedRam.Items.Add("17408");
+                serverStartAllocatedRam.Items.Add("18432");
+                serverStartAllocatedRam.Items.Add("19456");
+                serverStartAllocatedRam.Items.Add("20480");
+            }
+            else
+            {
+                if (Double.TryParse(allocatedRam.Text, out double parsedValue))
+                {
+                    double ram = Convert.ToDouble(serverStartAllocatedRam.Text);
+                    ram = ram / 1024;
+                    serverStartAllocatedRam.Text = Convert.ToString(ram);
+                }
+                serverStartAllocatedRam.Items.Clear();
+                serverStartAllocatedRam.Items.Add("0.5");
+                serverStartAllocatedRam.Items.Add("1");
+                serverStartAllocatedRam.Items.Add("2");
+                serverStartAllocatedRam.Items.Add("3");
+                serverStartAllocatedRam.Items.Add("4");
+                serverStartAllocatedRam.Items.Add("5");
+                serverStartAllocatedRam.Items.Add("6");
+                serverStartAllocatedRam.Items.Add("7");
+                serverStartAllocatedRam.Items.Add("8");
+                serverStartAllocatedRam.Items.Add("9");
+                serverStartAllocatedRam.Items.Add("10");
+                serverStartAllocatedRam.Items.Add("11");
+                serverStartAllocatedRam.Items.Add("12");
+                serverStartAllocatedRam.Items.Add("13");
+                serverStartAllocatedRam.Items.Add("14");
+                serverStartAllocatedRam.Items.Add("15");
+                serverStartAllocatedRam.Items.Add("16");
+                serverStartAllocatedRam.Items.Add("17");
+                serverStartAllocatedRam.Items.Add("18");
+                serverStartAllocatedRam.Items.Add("19");
+                serverStartAllocatedRam.Items.Add("20");
+            }
+        }
     }
 }

@@ -81,20 +81,21 @@
             this.serversListLbl = new System.Windows.Forms.Label();
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.TabPage();
+            this.editServerStartOptionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.startServerPropertiesBtn = new System.Windows.Forms.Button();
+            this.restartServerIfCrash = new System.Windows.Forms.CheckBox();
+            this.serverStartAllocatedRamLbl = new System.Windows.Forms.Label();
+            this.startGBradioBtn = new System.Windows.Forms.RadioButton();
+            this.serverStartAllocatedRam = new System.Windows.Forms.ComboBox();
+            this.startMBradioBtn = new System.Windows.Forms.RadioButton();
+            this.startServerBtn = new System.Windows.Forms.Button();
             this.StartServerLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.serverNameLbl = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.serverRunning = new System.Windows.Forms.Label();
             this.hideBorderPan1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.startServerBtn = new System.Windows.Forms.Button();
-            this.serverNameLbl = new System.Windows.Forms.Label();
-            this.startGBradioBtn = new System.Windows.Forms.RadioButton();
-            this.startMBradioBtn = new System.Windows.Forms.RadioButton();
-            this.serverStartAllocatedRam = new System.Windows.Forms.ComboBox();
-            this.serverStartAllocatedRamLbl = new System.Windows.Forms.Label();
-            this.editServerStartOptionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.restartServerIfCrash = new System.Windows.Forms.CheckBox();
-            this.startServerPropertiesBtn = new System.Windows.Forms.Button();
+            this.saveChangesServerStartOptionsBtn = new System.Windows.Forms.Button();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLeftLogo)).BeginInit();
             this.sideBar.SuspendLayout();
@@ -104,9 +105,9 @@
             this.noEditWhileInstallPan.SuspendLayout();
             this.welcomeTab.SuspendLayout();
             this.Start.SuspendLayout();
+            this.editServerStartOptionsGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.editServerStartOptionsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // bar
@@ -782,78 +783,54 @@
             this.Start.TabIndex = 2;
             this.Start.Text = "Start";
             // 
-            // StartServerLbl
+            // editServerStartOptionsGroupBox
             // 
-            this.StartServerLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.StartServerLbl.AutoSize = true;
-            this.StartServerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartServerLbl.Location = new System.Drawing.Point(209, 3);
-            this.StartServerLbl.Name = "StartServerLbl";
-            this.StartServerLbl.Size = new System.Drawing.Size(182, 13);
-            this.StartServerLbl.TabIndex = 2;
-            this.StartServerLbl.Text = "Start server / edit start options";
+            this.editServerStartOptionsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editServerStartOptionsGroupBox.Controls.Add(this.saveChangesServerStartOptionsBtn);
+            this.editServerStartOptionsGroupBox.Controls.Add(this.startServerPropertiesBtn);
+            this.editServerStartOptionsGroupBox.Controls.Add(this.restartServerIfCrash);
+            this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRamLbl);
+            this.editServerStartOptionsGroupBox.Controls.Add(this.startGBradioBtn);
+            this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRam);
+            this.editServerStartOptionsGroupBox.Controls.Add(this.startMBradioBtn);
+            this.editServerStartOptionsGroupBox.Location = new System.Drawing.Point(103, 232);
+            this.editServerStartOptionsGroupBox.Name = "editServerStartOptionsGroupBox";
+            this.editServerStartOptionsGroupBox.Size = new System.Drawing.Size(378, 164);
+            this.editServerStartOptionsGroupBox.TabIndex = 26;
+            this.editServerStartOptionsGroupBox.TabStop = false;
+            this.editServerStartOptionsGroupBox.Text = "Edit server start options";
             // 
-            // panel1
+            // startServerPropertiesBtn
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.serverNameLbl);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(77, 45);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(434, 100);
-            this.panel1.TabIndex = 1;
+            this.startServerPropertiesBtn.BackColor = System.Drawing.Color.LightGray;
+            this.startServerPropertiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startServerPropertiesBtn.Location = new System.Drawing.Point(108, 100);
+            this.startServerPropertiesBtn.Name = "startServerPropertiesBtn";
+            this.startServerPropertiesBtn.Size = new System.Drawing.Size(169, 23);
+            this.startServerPropertiesBtn.TabIndex = 27;
+            this.startServerPropertiesBtn.Text = "Open server properties";
+            this.startServerPropertiesBtn.UseVisualStyleBackColor = false;
             // 
-            // serverRunning
+            // restartServerIfCrash
             // 
-            this.serverRunning.AutoSize = true;
-            this.serverRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serverRunning.Location = new System.Drawing.Point(200, 11);
-            this.serverRunning.Name = "serverRunning";
-            this.serverRunning.Size = new System.Drawing.Size(52, 16);
-            this.serverRunning.TabIndex = 0;
-            this.serverRunning.Text = "Offline";
+            this.restartServerIfCrash.AutoSize = true;
+            this.restartServerIfCrash.Location = new System.Drawing.Point(113, 65);
+            this.restartServerIfCrash.Name = "restartServerIfCrash";
+            this.restartServerIfCrash.Size = new System.Drawing.Size(164, 17);
+            this.restartServerIfCrash.TabIndex = 26;
+            this.restartServerIfCrash.Text = "Restart my server if it crashes";
+            this.restartServerIfCrash.UseVisualStyleBackColor = true;
+            this.restartServerIfCrash.CheckedChanged += new System.EventHandler(this.restartServerIfCrash_CheckedChanged);
             // 
-            // hideBorderPan1
+            // serverStartAllocatedRamLbl
             // 
-            this.hideBorderPan1.Location = new System.Drawing.Point(206, 34);
-            this.hideBorderPan1.Name = "hideBorderPan1";
-            this.hideBorderPan1.Size = new System.Drawing.Size(7, 435);
-            this.hideBorderPan1.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Controls.Add(this.serverRunning);
-            this.panel2.Location = new System.Drawing.Point(0, 63);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(433, 35);
-            this.panel2.TabIndex = 0;
-            // 
-            // startServerBtn
-            // 
-            this.startServerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.startServerBtn.BackColor = System.Drawing.Color.Lime;
-            this.startServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startServerBtn.Location = new System.Drawing.Point(265, 161);
-            this.startServerBtn.Name = "startServerBtn";
-            this.startServerBtn.Size = new System.Drawing.Size(75, 23);
-            this.startServerBtn.TabIndex = 3;
-            this.startServerBtn.Text = "Start";
-            this.startServerBtn.UseVisualStyleBackColor = false;
-            // 
-            // serverNameLbl
-            // 
-            this.serverNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.serverNameLbl.AutoSize = true;
-            this.serverNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serverNameLbl.ForeColor = System.Drawing.Color.White;
-            this.serverNameLbl.Location = new System.Drawing.Point(165, 23);
-            this.serverNameLbl.Name = "serverNameLbl";
-            this.serverNameLbl.Size = new System.Drawing.Size(122, 16);
-            this.serverNameLbl.TabIndex = 1;
-            this.serverNameLbl.Text = "No server selected";
+            this.serverStartAllocatedRamLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.serverStartAllocatedRamLbl.AutoSize = true;
+            this.serverStartAllocatedRamLbl.Location = new System.Drawing.Point(24, 26);
+            this.serverStartAllocatedRamLbl.Name = "serverStartAllocatedRamLbl";
+            this.serverStartAllocatedRamLbl.Size = new System.Drawing.Size(154, 13);
+            this.serverStartAllocatedRamLbl.TabIndex = 22;
+            this.serverStartAllocatedRamLbl.Text = "Allocated RAM for your server :";
             // 
             // startGBradioBtn
             // 
@@ -865,19 +842,6 @@
             this.startGBradioBtn.TabIndex = 25;
             this.startGBradioBtn.Text = "GB";
             this.startGBradioBtn.UseVisualStyleBackColor = true;
-            // 
-            // startMBradioBtn
-            // 
-            this.startMBradioBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.startMBradioBtn.AutoSize = true;
-            this.startMBradioBtn.Checked = true;
-            this.startMBradioBtn.Location = new System.Drawing.Point(311, 15);
-            this.startMBradioBtn.Name = "startMBradioBtn";
-            this.startMBradioBtn.Size = new System.Drawing.Size(41, 17);
-            this.startMBradioBtn.TabIndex = 24;
-            this.startMBradioBtn.TabStop = true;
-            this.startMBradioBtn.Text = "MB";
-            this.startMBradioBtn.UseVisualStyleBackColor = true;
             // 
             // serverStartAllocatedRam
             // 
@@ -911,53 +875,103 @@
             this.serverStartAllocatedRam.TabIndex = 23;
             this.serverStartAllocatedRam.Text = "2048";
             // 
-            // serverStartAllocatedRamLbl
+            // startMBradioBtn
             // 
-            this.serverStartAllocatedRamLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.serverStartAllocatedRamLbl.AutoSize = true;
-            this.serverStartAllocatedRamLbl.Location = new System.Drawing.Point(24, 26);
-            this.serverStartAllocatedRamLbl.Name = "serverStartAllocatedRamLbl";
-            this.serverStartAllocatedRamLbl.Size = new System.Drawing.Size(154, 13);
-            this.serverStartAllocatedRamLbl.TabIndex = 22;
-            this.serverStartAllocatedRamLbl.Text = "Allocated RAM for your server :";
+            this.startMBradioBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.startMBradioBtn.AutoSize = true;
+            this.startMBradioBtn.Checked = true;
+            this.startMBradioBtn.Location = new System.Drawing.Point(311, 15);
+            this.startMBradioBtn.Name = "startMBradioBtn";
+            this.startMBradioBtn.Size = new System.Drawing.Size(41, 17);
+            this.startMBradioBtn.TabIndex = 24;
+            this.startMBradioBtn.TabStop = true;
+            this.startMBradioBtn.Text = "MB";
+            this.startMBradioBtn.UseVisualStyleBackColor = true;
+            this.startMBradioBtn.CheckedChanged += new System.EventHandler(this.startMBradioBtn_CheckedChanged);
             // 
-            // editServerStartOptionsGroupBox
+            // startServerBtn
             // 
-            this.editServerStartOptionsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.editServerStartOptionsGroupBox.Controls.Add(this.startServerPropertiesBtn);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.restartServerIfCrash);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRamLbl);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.startGBradioBtn);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRam);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.startMBradioBtn);
-            this.editServerStartOptionsGroupBox.Location = new System.Drawing.Point(103, 253);
-            this.editServerStartOptionsGroupBox.Name = "editServerStartOptionsGroupBox";
-            this.editServerStartOptionsGroupBox.Size = new System.Drawing.Size(378, 142);
-            this.editServerStartOptionsGroupBox.TabIndex = 26;
-            this.editServerStartOptionsGroupBox.TabStop = false;
-            this.editServerStartOptionsGroupBox.Text = "Edit server start options";
+            this.startServerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.startServerBtn.BackColor = System.Drawing.Color.Lime;
+            this.startServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startServerBtn.Location = new System.Drawing.Point(265, 161);
+            this.startServerBtn.Name = "startServerBtn";
+            this.startServerBtn.Size = new System.Drawing.Size(75, 23);
+            this.startServerBtn.TabIndex = 3;
+            this.startServerBtn.Text = "Start";
+            this.startServerBtn.UseVisualStyleBackColor = false;
             // 
-            // restartServerIfCrash
+            // StartServerLbl
             // 
-            this.restartServerIfCrash.AutoSize = true;
-            this.restartServerIfCrash.Location = new System.Drawing.Point(113, 65);
-            this.restartServerIfCrash.Name = "restartServerIfCrash";
-            this.restartServerIfCrash.Size = new System.Drawing.Size(164, 17);
-            this.restartServerIfCrash.TabIndex = 26;
-            this.restartServerIfCrash.Text = "Restart my server if it crashes";
-            this.restartServerIfCrash.UseVisualStyleBackColor = true;
-            this.restartServerIfCrash.CheckedChanged += new System.EventHandler(this.restartServerIfCrash_CheckedChanged);
+            this.StartServerLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.StartServerLbl.AutoSize = true;
+            this.StartServerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartServerLbl.Location = new System.Drawing.Point(209, 3);
+            this.StartServerLbl.Name = "StartServerLbl";
+            this.StartServerLbl.Size = new System.Drawing.Size(182, 13);
+            this.StartServerLbl.TabIndex = 2;
+            this.StartServerLbl.Text = "Start server / edit start options";
             // 
-            // startServerPropertiesBtn
+            // panel1
             // 
-            this.startServerPropertiesBtn.BackColor = System.Drawing.Color.LightGray;
-            this.startServerPropertiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startServerPropertiesBtn.Location = new System.Drawing.Point(108, 100);
-            this.startServerPropertiesBtn.Name = "startServerPropertiesBtn";
-            this.startServerPropertiesBtn.Size = new System.Drawing.Size(169, 23);
-            this.startServerPropertiesBtn.TabIndex = 27;
-            this.startServerPropertiesBtn.Text = "Open server properties";
-            this.startServerPropertiesBtn.UseVisualStyleBackColor = false;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.serverNameLbl);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(77, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(434, 100);
+            this.panel1.TabIndex = 1;
+            // 
+            // serverNameLbl
+            // 
+            this.serverNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.serverNameLbl.AutoSize = true;
+            this.serverNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverNameLbl.ForeColor = System.Drawing.Color.White;
+            this.serverNameLbl.Location = new System.Drawing.Point(165, 23);
+            this.serverNameLbl.Name = "serverNameLbl";
+            this.serverNameLbl.Size = new System.Drawing.Size(122, 16);
+            this.serverNameLbl.TabIndex = 1;
+            this.serverNameLbl.Text = "No server selected";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.serverRunning);
+            this.panel2.Location = new System.Drawing.Point(0, 63);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(433, 35);
+            this.panel2.TabIndex = 0;
+            // 
+            // serverRunning
+            // 
+            this.serverRunning.AutoSize = true;
+            this.serverRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverRunning.Location = new System.Drawing.Point(200, 11);
+            this.serverRunning.Name = "serverRunning";
+            this.serverRunning.Size = new System.Drawing.Size(52, 16);
+            this.serverRunning.TabIndex = 0;
+            this.serverRunning.Text = "Offline";
+            // 
+            // hideBorderPan1
+            // 
+            this.hideBorderPan1.Location = new System.Drawing.Point(206, 34);
+            this.hideBorderPan1.Name = "hideBorderPan1";
+            this.hideBorderPan1.Size = new System.Drawing.Size(7, 435);
+            this.hideBorderPan1.TabIndex = 16;
+            // 
+            // saveChangesServerStartOptionsBtn
+            // 
+            this.saveChangesServerStartOptionsBtn.BackColor = System.Drawing.Color.LightGray;
+            this.saveChangesServerStartOptionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveChangesServerStartOptionsBtn.Location = new System.Drawing.Point(133, 135);
+            this.saveChangesServerStartOptionsBtn.Name = "saveChangesServerStartOptionsBtn";
+            this.saveChangesServerStartOptionsBtn.Size = new System.Drawing.Size(127, 23);
+            this.saveChangesServerStartOptionsBtn.TabIndex = 28;
+            this.saveChangesServerStartOptionsBtn.Text = "Save changes";
+            this.saveChangesServerStartOptionsBtn.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -991,12 +1005,12 @@
             this.welcomeTab.PerformLayout();
             this.Start.ResumeLayout(false);
             this.Start.PerformLayout();
+            this.editServerStartOptionsGroupBox.ResumeLayout(false);
+            this.editServerStartOptionsGroupBox.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.editServerStartOptionsGroupBox.ResumeLayout(false);
-            this.editServerStartOptionsGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1069,6 +1083,7 @@
         private System.Windows.Forms.ComboBox serverStartAllocatedRam;
         private System.Windows.Forms.RadioButton startMBradioBtn;
         private System.Windows.Forms.Button startServerPropertiesBtn;
+        private System.Windows.Forms.Button saveChangesServerStartOptionsBtn;
     }
 }
 
