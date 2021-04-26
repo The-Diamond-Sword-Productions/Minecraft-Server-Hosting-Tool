@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CraftBukkitVersions.cs" />
     <Compile Include="PaperVersions.cs" />
     <Compile Include="SpigotVersions.cs" />
     <Compile Include="VanillaVersions.cs" />
