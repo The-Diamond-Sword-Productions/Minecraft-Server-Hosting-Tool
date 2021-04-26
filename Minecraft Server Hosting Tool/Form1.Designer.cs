@@ -818,7 +818,7 @@
             // separatorPanServerEditStartOptions
             // 
             this.separatorPanServerEditStartOptions.BackColor = System.Drawing.Color.White;
-            this.separatorPanServerEditStartOptions.Location = new System.Drawing.Point(0, 126);
+            this.separatorPanServerEditStartOptions.Location = new System.Drawing.Point(0, 127);
             this.separatorPanServerEditStartOptions.Name = "separatorPanServerEditStartOptions";
             this.separatorPanServerEditStartOptions.Size = new System.Drawing.Size(378, 2);
             this.separatorPanServerEditStartOptions.TabIndex = 29;
@@ -849,11 +849,11 @@
             // restartServerIfCrash
             // 
             this.restartServerIfCrash.AutoSize = true;
-            this.restartServerIfCrash.Location = new System.Drawing.Point(113, 65);
+            this.restartServerIfCrash.Location = new System.Drawing.Point(103, 65);
             this.restartServerIfCrash.Name = "restartServerIfCrash";
-            this.restartServerIfCrash.Size = new System.Drawing.Size(164, 17);
+            this.restartServerIfCrash.Size = new System.Drawing.Size(184, 17);
             this.restartServerIfCrash.TabIndex = 26;
-            this.restartServerIfCrash.Text = "Restart my server if it crashes";
+            this.restartServerIfCrash.Text = "Auto restart my server if it crashes";
             this.restartServerIfCrash.UseVisualStyleBackColor = true;
             this.restartServerIfCrash.CheckedChanged += new System.EventHandler(this.restartServerIfCrash_CheckedChanged);
             // 
