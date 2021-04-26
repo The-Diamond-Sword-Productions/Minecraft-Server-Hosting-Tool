@@ -82,10 +82,10 @@ namespace Minecraft_Server_Hosting_Tool
         }
         private void hideBar(object sender, EventArgs e)
         {
-            if (animcount <= 60)
+            if (animcount <= 30)
             {
-                openSideBarBtn.Location = new Point(openSideBarBtn.Location.X - 3, 34);
-                sideBar.Location = new Point(sideBar.Location.X - 3, 34);
+                openSideBarBtn.Location = new Point(openSideBarBtn.Location.X - 6, 34);
+                sideBar.Location = new Point(sideBar.Location.X - 6, 34);
             }
             else
             {
@@ -103,10 +103,10 @@ namespace Minecraft_Server_Hosting_Tool
         }
         private void showBar(object sender, EventArgs e)
         {
-            if (animcount <= 60)
+            if (animcount <= 30)
             {
-                openSideBarBtn.Location = new Point(openSideBarBtn.Location.X + 3, 34);
-                sideBar.Location = new Point(sideBar.Location.X + 3, 34);
+                openSideBarBtn.Location = new Point(openSideBarBtn.Location.X + 6, 34);
+                sideBar.Location = new Point(sideBar.Location.X + 6, 34);
             }
             else
             {
