@@ -104,6 +104,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.serverRunning = new System.Windows.Forms.Label();
             this.hideBorderPan1 = new System.Windows.Forms.Panel();
+            this.welcomeServers = new System.Windows.Forms.ListBox();
+            this.welcomeSelectServBtn = new System.Windows.Forms.Button();
+            this.noServersLbl = new System.Windows.Forms.Label();
+            this.useCommaInstall = new System.Windows.Forms.Label();
+            this.useCommaStart = new System.Windows.Forms.Label();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLeftLogo)).BeginInit();
             this.sideBar.SuspendLayout();
@@ -484,6 +489,7 @@
             // noEditWhileInstallPan
             // 
             this.noEditWhileInstallPan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.noEditWhileInstallPan.Controls.Add(this.useCommaInstall);
             this.noEditWhileInstallPan.Controls.Add(this.serverNameSetLbl);
             this.noEditWhileInstallPan.Controls.Add(this.serverName);
             this.noEditWhileInstallPan.Controls.Add(this.panel4);
@@ -673,6 +679,7 @@
             this.allocatedRam.Size = new System.Drawing.Size(121, 21);
             this.allocatedRam.TabIndex = 19;
             this.allocatedRam.Text = "2048";
+            this.allocatedRam.TextUpdate += new System.EventHandler(this.allocatedRam_SelectedIndexChanged);
             // 
             // serverInstallTypeLbl
             // 
@@ -805,6 +812,9 @@
             // welcomeTab
             // 
             this.welcomeTab.BackColor = System.Drawing.Color.Silver;
+            this.welcomeTab.Controls.Add(this.noServersLbl);
+            this.welcomeTab.Controls.Add(this.welcomeSelectServBtn);
+            this.welcomeTab.Controls.Add(this.welcomeServers);
             this.welcomeTab.Controls.Add(this.importServerBtn);
             this.welcomeTab.Controls.Add(this.serversListLbl);
             this.welcomeTab.Controls.Add(this.welcomeLbl);
@@ -817,11 +827,12 @@
             // 
             // importServerBtn
             // 
+            this.importServerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.importServerBtn.BackColor = System.Drawing.Color.LightGray;
             this.importServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importServerBtn.Location = new System.Drawing.Point(138, 499);
+            this.importServerBtn.Location = new System.Drawing.Point(6, 499);
             this.importServerBtn.Name = "importServerBtn";
-            this.importServerBtn.Size = new System.Drawing.Size(329, 23);
+            this.importServerBtn.Size = new System.Drawing.Size(461, 23);
             this.importServerBtn.TabIndex = 10;
             this.importServerBtn.Text = "Or you can import an existing server by clicking here";
             this.importServerBtn.UseVisualStyleBackColor = false;
@@ -865,6 +876,7 @@
             // editServerStartOptionsGroupBox
             // 
             this.editServerStartOptionsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editServerStartOptionsGroupBox.Controls.Add(this.useCommaStart);
             this.editServerStartOptionsGroupBox.Controls.Add(this.separatorPanServerEditStartOptions);
             this.editServerStartOptionsGroupBox.Controls.Add(this.saveChangesServerStartOptionsBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.startServerPropertiesBtn);
@@ -974,6 +986,7 @@
             this.serverStartAllocatedRam.Size = new System.Drawing.Size(121, 21);
             this.serverStartAllocatedRam.TabIndex = 23;
             this.serverStartAllocatedRam.Text = "2048";
+            this.serverStartAllocatedRam.TextUpdate += new System.EventHandler(this.serverStartAllocatedRam_SelectedIndexChanged);
             // 
             // startMBradioBtn
             // 
@@ -1061,6 +1074,61 @@
             this.hideBorderPan1.Name = "hideBorderPan1";
             this.hideBorderPan1.Size = new System.Drawing.Size(7, 562);
             this.hideBorderPan1.TabIndex = 16;
+            // 
+            // welcomeServers
+            // 
+            this.welcomeServers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.welcomeServers.BackColor = System.Drawing.Color.Gray;
+            this.welcomeServers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.welcomeServers.FormattingEnabled = true;
+            this.welcomeServers.Location = new System.Drawing.Point(6, 117);
+            this.welcomeServers.Name = "welcomeServers";
+            this.welcomeServers.Size = new System.Drawing.Size(461, 374);
+            this.welcomeServers.TabIndex = 11;
+            // 
+            // welcomeSelectServBtn
+            // 
+            this.welcomeSelectServBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.welcomeSelectServBtn.BackColor = System.Drawing.Color.LightGray;
+            this.welcomeSelectServBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.welcomeSelectServBtn.Location = new System.Drawing.Point(480, 279);
+            this.welcomeSelectServBtn.Name = "welcomeSelectServBtn";
+            this.welcomeSelectServBtn.Size = new System.Drawing.Size(96, 23);
+            this.welcomeSelectServBtn.TabIndex = 12;
+            this.welcomeSelectServBtn.Text = "Select";
+            this.welcomeSelectServBtn.UseVisualStyleBackColor = false;
+            // 
+            // noServersLbl
+            // 
+            this.noServersLbl.AutoSize = true;
+            this.noServersLbl.BackColor = System.Drawing.Color.Gray;
+            this.noServersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noServersLbl.ForeColor = System.Drawing.Color.White;
+            this.noServersLbl.Location = new System.Drawing.Point(25, 279);
+            this.noServersLbl.Name = "noServersLbl";
+            this.noServersLbl.Size = new System.Drawing.Size(426, 24);
+            this.noServersLbl.TabIndex = 13;
+            this.noServersLbl.Text = "It seems like you haven\'t created any servers yet...";
+            // 
+            // useCommaInstall
+            // 
+            this.useCommaInstall.AutoSize = true;
+            this.useCommaInstall.ForeColor = System.Drawing.Color.DarkRed;
+            this.useCommaInstall.Location = new System.Drawing.Point(198, 401);
+            this.useCommaInstall.Name = "useCommaInstall";
+            this.useCommaInstall.Size = new System.Drawing.Size(167, 13);
+            this.useCommaInstall.TabIndex = 34;
+            this.useCommaInstall.Text = "Please use a comma for decimals.";
+            // 
+            // useCommaStart
+            // 
+            this.useCommaStart.AutoSize = true;
+            this.useCommaStart.ForeColor = System.Drawing.Color.DarkRed;
+            this.useCommaStart.Location = new System.Drawing.Point(111, 47);
+            this.useCommaStart.Name = "useCommaStart";
+            this.useCommaStart.Size = new System.Drawing.Size(167, 13);
+            this.useCommaStart.TabIndex = 35;
+            this.useCommaStart.Text = "Please use a comma for decimals.";
             // 
             // MainForm
             // 
@@ -1181,6 +1249,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label serverNameSetLbl;
         private System.Windows.Forms.TextBox serverName;
+        private System.Windows.Forms.Button welcomeSelectServBtn;
+        private System.Windows.Forms.ListBox welcomeServers;
+        private System.Windows.Forms.Label noServersLbl;
+        private System.Windows.Forms.Label useCommaInstall;
+        private System.Windows.Forms.Label useCommaStart;
     }
 }
 

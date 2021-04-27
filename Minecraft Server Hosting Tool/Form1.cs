@@ -40,6 +40,23 @@ namespace Minecraft_Server_Hosting_Tool
                     await sw.WriteLineAsync("0");
                 }
             }
+
+            string[] readText = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers.msht");
+            int num = int.Parse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers.msht").Skip(1).Take(1).First());
+
+            if (num == 0)
+            {
+                welcomeServers.Enabled = false;
+                noServersLbl.Visible = true;
+            }
+            else
+            {
+                noServersLbl.Visible = false;
+                for (int i = 0; i < num; i++)
+                {
+                    welcomeServers.Items.Add(readText[i + 2]);
+                }
+            }
         }
 
         //---------------Code for dragable form----------------
@@ -182,7 +199,7 @@ namespace Minecraft_Server_Hosting_Tool
                     allocatedRam.Text = Convert.ToString(ram);
                 }
                 allocatedRam.Items.Clear();
-                allocatedRam.Items.Add("0.5");
+                allocatedRam.Items.Add("0,5");
                 allocatedRam.Items.Add("1");
                 allocatedRam.Items.Add("2");
                 allocatedRam.Items.Add("3");
@@ -233,6 +250,11 @@ namespace Minecraft_Server_Hosting_Tool
             if (string.IsNullOrWhiteSpace(serverName.Text))
             {
                 MessageBox.Show("Please enter a name for your server.", "No Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (serverName.Text.Contains("|"))
+            {
+                MessageBox.Show("Your server's name contains the following invalid character : | .", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (!Double.TryParse(allocatedRam.Text, out double parsedValue))
@@ -1061,7 +1083,7 @@ namespace Minecraft_Server_Hosting_Tool
                     serverStartAllocatedRam.Text = Convert.ToString(ram);
                 }
                 serverStartAllocatedRam.Items.Clear();
-                serverStartAllocatedRam.Items.Add("0.5");
+                serverStartAllocatedRam.Items.Add("0,5");
                 serverStartAllocatedRam.Items.Add("1");
                 serverStartAllocatedRam.Items.Add("2");
                 serverStartAllocatedRam.Items.Add("3");
@@ -1096,6 +1118,26 @@ namespace Minecraft_Server_Hosting_Tool
             {
                 serverInstallPath.Enabled = true;
                 browseServerInstallPathBtn.Enabled = true;
+            }
+        }
+
+        private void allocatedRam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!double.TryParse(allocatedRam.Text, out double parsedValue))
+            {
+                allocatedRam.Text = allocatedRam.Text.Remove(allocatedRam.Text.Length - 1, 1);
+                allocatedRam.SelectionStart = allocatedRam.Text.Length;
+                allocatedRam.SelectionLength = 0;
+            }
+        }
+
+        private void serverStartAllocatedRam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!double.TryParse(serverStartAllocatedRam.Text, out double parsedValue))
+            {
+                serverStartAllocatedRam.Text = serverStartAllocatedRam.Text.Remove(serverStartAllocatedRam.Text.Length - 1, 1);
+                serverStartAllocatedRam.SelectionStart = serverStartAllocatedRam.Text.Length;
+                serverStartAllocatedRam.SelectionLength = 0;
             }
         }
     }
