@@ -237,15 +237,18 @@ namespace Minecraft_Server_Hosting_Tool
         }
         private async void installNewServerBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(serverInstallPath.Text))
+            if (autoDirectory.Checked == false)
             {
-                MessageBox.Show("Please enter a directory to install your server.", "No Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (!Directory.Exists(serverInstallPath.Text))
-            {
-                MessageBox.Show("The directory you have entered does not exist.", "Wrong Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (string.IsNullOrWhiteSpace(serverInstallPath.Text))
+                {
+                    MessageBox.Show("Please enter a directory to install your server.", "No Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!Directory.Exists(serverInstallPath.Text))
+                {
+                    MessageBox.Show("The directory you have entered does not exist.", "Wrong Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             if (string.IsNullOrWhiteSpace(serverName.Text))
             {
@@ -257,6 +260,30 @@ namespace Minecraft_Server_Hosting_Tool
                 MessageBox.Show("Your server's name contains the following invalid character : | .", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+
+            string[] read_Text = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers.msht");
+            int count_num = int.Parse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers.msht").Skip(1).Take(1).First());
+            bool nameAlreadyExists = false;
+
+            if (count_num != 0)
+            {
+                for (int i = 0; i < count_num; i++)
+                {
+                    string temp = read_Text[i + 2];
+                    if (serverName.Text == temp.Split(" | ".ToCharArray())[0])
+                    {
+                        nameAlreadyExists = true;
+                    }
+                }
+            }
+            if (nameAlreadyExists == true)
+            {
+                MessageBox.Show("You have already created a server named '" + serverName.Text + "'.", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             if (!Double.TryParse(allocatedRam.Text, out double parsedValue))
             {
                 MessageBox.Show("The ram amount is invalid! (" + allocatedRam.Text + ")\n\nPlease put the number of MB / GB you want for your server!\n\nDefault: 2048 MB", "Invalid Ram", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -286,11 +313,14 @@ namespace Minecraft_Server_Hosting_Tool
                 if (moreThanPCRam == DialogResult.No)
                     return;
             }
-            if (Directory.EnumerateFileSystemEntries(serverInstallPath.Text).Any())
+            if (autoDirectory.Checked == false)
             {
-                DialogResult folderNotEmpty = MessageBox.Show("The folder you have selected (" + serverInstallPath.Text + ") is not empty.\n\nAre you sure you want to continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (folderNotEmpty == DialogResult.No)
-                    return;
+                if (Directory.EnumerateFileSystemEntries(serverInstallPath.Text).Any())
+                {
+                    DialogResult folderNotEmpty = MessageBox.Show("The folder you have selected (" + serverInstallPath.Text + ") is not empty.\n\nAre you sure you want to continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (folderNotEmpty == DialogResult.No)
+                        return;
+                }
             }
 
             if (!NetworkInterface.GetIsNetworkAvailable())
@@ -303,7 +333,11 @@ namespace Minecraft_Server_Hosting_Tool
 
             string JarFileName = serverInstallPath.Text + @"\server.jar";
             if (autoDirectory.Checked)
-                JarFileName = "";
+            {
+                if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers\\" + serverName.Text))
+                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers\\" + serverName.Text);
+                JarFileName = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers\\" + serverName.Text + "\\server.jar";
+            }
             string errorMessage = "Error : Minecraft version is unavailable.";
 
             noEditWhileInstallPan.Enabled = false;
@@ -314,7 +348,7 @@ namespace Minecraft_Server_Hosting_Tool
             client.DownloadProgressChanged += (o, args) =>
             {
                 double installProgress = args.ProgressPercentage * 0.9; //.jar download stops at 90% because 10 last % for generating files such as eula, server.properties...
-                installStatusLbl.Text = "Downloading: "  + serverInstallType.Text + " " + serverInstallVersion.Text + " server file , please wait..." + Convert.ToString(installProgress) + "%";
+                installStatusLbl.Text = "Downloading: "  + serverInstallType.Text + " " + serverInstallVersion.Text + " server file , please wait..." + Convert.ToString(installProgress) + "% , ";
                 installProgressBar.Value = Convert.ToInt32(installProgress);
             };
             if (serverInstallType.Text == "Vanilla (normal minecraft)")
@@ -938,7 +972,7 @@ namespace Minecraft_Server_Hosting_Tool
 
             using (StreamWriter sw = File.CreateText(serverInstallPath.Text + @"\" + "eula.txt"))
             {
-                await sw.WriteLineAsync("eula=false");
+                await sw.WriteLineAsync("eula=true");
             }
 
             installProgressBar.Value = 95;
@@ -1113,6 +1147,7 @@ namespace Minecraft_Server_Hosting_Tool
             {
                 serverInstallPath.Enabled = false;
                 browseServerInstallPathBtn.Enabled = false;
+                serverInstallPath.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers\\" + serverName.Text;
             }
             else
             {
@@ -1139,6 +1174,18 @@ namespace Minecraft_Server_Hosting_Tool
                 serverStartAllocatedRam.SelectionStart = serverStartAllocatedRam.Text.Length;
                 serverStartAllocatedRam.SelectionLength = 0;
             }
+        }
+
+        private void serverName_TextChanged(object sender, EventArgs e)
+        {
+            if (serverName.Text.Contains("|"))
+            {
+                serverName.Text = serverName.Text.Remove(serverName.Text.Length - 1, 1);
+                serverName.SelectionStart = serverName.Text.Length;
+                serverName.SelectionLength = 0;
+            }
+            if (autoDirectory.Checked)
+                serverInstallPath.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers\\" + serverName.Text;
         }
     }
 }
