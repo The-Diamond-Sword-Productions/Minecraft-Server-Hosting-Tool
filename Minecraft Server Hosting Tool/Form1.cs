@@ -1238,12 +1238,12 @@ namespace Minecraft_Server_Hosting_Tool
             DialogResult valid = MessageBox.Show("Every files / folders in the server's directory (" + tempPath + ") will be deleted, and the server's folder itself.\n\nThis action cannot be reverted.\n\nDo you want to continue?", "Validation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (valid == DialogResult.No)
                 return;
+            welcomeServers.Items.RemoveAt(welcomeServers.SelectedIndex);
             if (!Directory.Exists(tempPath))
             {
                 MessageBox.Show("It seems like this server has already been deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            welcomeServers.Items.RemoveAt(welcomeServers.SelectedIndex);
             Directory.Delete(tempPath, true);
         }
     }
