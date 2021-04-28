@@ -94,8 +94,6 @@
             this.Start = new System.Windows.Forms.TabPage();
             this.editServerStartOptionsGroupBox = new System.Windows.Forms.GroupBox();
             this.useCommaStart = new System.Windows.Forms.Label();
-            this.separatorPanServerEditStartOptions = new System.Windows.Forms.Panel();
-            this.saveChangesServerStartOptionsBtn = new System.Windows.Forms.Button();
             this.startServerPropertiesBtn = new System.Windows.Forms.Button();
             this.restartServerIfCrash = new System.Windows.Forms.CheckBox();
             this.serverStartAllocatedRamLbl = new System.Windows.Forms.Label();
@@ -109,6 +107,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.serverRunning = new System.Windows.Forms.Label();
             this.hideBorderPan1 = new System.Windows.Forms.Panel();
+            this.selectedServerBtns = new System.Windows.Forms.Panel();
+            this.selectServerByDoubleClickLbl = new System.Windows.Forms.Label();
+            this.deleteSelectedServerBtn = new System.Windows.Forms.Button();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLeftLogo)).BeginInit();
             this.sideBar.SuspendLayout();
@@ -121,6 +122,7 @@
             this.editServerStartOptionsGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.selectedServerBtns.SuspendLayout();
             this.SuspendLayout();
             // 
             // bar
@@ -188,25 +190,10 @@
             // 
             this.sideBar.BackColor = System.Drawing.Color.White;
             this.sideBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sideBar.Controls.Add(this.serverPropertiesBtn);
-            this.sideBar.Controls.Add(this.reinstallServerBtn);
-            this.sideBar.Controls.Add(this.moreLbl);
-            this.sideBar.Controls.Add(this.managePluginsBtn);
-            this.sideBar.Controls.Add(this.pluginsLbl);
-            this.sideBar.Controls.Add(this.backupsBtn);
-            this.sideBar.Controls.Add(this.consoleBtn);
-            this.sideBar.Controls.Add(this.worldsBtn);
-            this.sideBar.Controls.Add(this.banListBtn);
-            this.sideBar.Controls.Add(this.whiteListBtn);
-            this.sideBar.Controls.Add(this.operatorsBtn);
-            this.sideBar.Controls.Add(this.playersLbl);
-            this.sideBar.Controls.Add(this.onlinePlayersBtn);
-            this.sideBar.Controls.Add(this.servFilesBtn);
+            this.sideBar.Controls.Add(this.selectedServerBtns);
             this.sideBar.Controls.Add(this.createServLbl);
             this.sideBar.Controls.Add(this.installServBtn);
-            this.sideBar.Controls.Add(this.editServLbl);
             this.sideBar.Controls.Add(this.selectServLbl);
-            this.sideBar.Controls.Add(this.editLaunchOptBtn);
             this.sideBar.Controls.Add(this.browseServsBtn);
             this.sideBar.Location = new System.Drawing.Point(0, 34);
             this.sideBar.Name = "sideBar";
@@ -217,7 +204,7 @@
             // 
             this.serverPropertiesBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.serverPropertiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.serverPropertiesBtn.Location = new System.Drawing.Point(-1, 213);
+            this.serverPropertiesBtn.Location = new System.Drawing.Point(1, 87);
             this.serverPropertiesBtn.Name = "serverPropertiesBtn";
             this.serverPropertiesBtn.Size = new System.Drawing.Size(184, 23);
             this.serverPropertiesBtn.TabIndex = 24;
@@ -228,7 +215,7 @@
             // 
             this.reinstallServerBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.reinstallServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reinstallServerBtn.Location = new System.Drawing.Point(-1, 538);
+            this.reinstallServerBtn.Location = new System.Drawing.Point(1, 412);
             this.reinstallServerBtn.Name = "reinstallServerBtn";
             this.reinstallServerBtn.Size = new System.Drawing.Size(184, 23);
             this.reinstallServerBtn.TabIndex = 23;
@@ -238,7 +225,7 @@
             // moreLbl
             // 
             this.moreLbl.AutoSize = true;
-            this.moreLbl.Location = new System.Drawing.Point(74, 511);
+            this.moreLbl.Location = new System.Drawing.Point(76, 385);
             this.moreLbl.Name = "moreLbl";
             this.moreLbl.Size = new System.Drawing.Size(37, 13);
             this.moreLbl.TabIndex = 22;
@@ -248,7 +235,7 @@
             // 
             this.managePluginsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.managePluginsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.managePluginsBtn.Location = new System.Drawing.Point(-1, 474);
+            this.managePluginsBtn.Location = new System.Drawing.Point(1, 348);
             this.managePluginsBtn.Name = "managePluginsBtn";
             this.managePluginsBtn.Size = new System.Drawing.Size(184, 23);
             this.managePluginsBtn.TabIndex = 21;
@@ -258,7 +245,7 @@
             // pluginsLbl
             // 
             this.pluginsLbl.AutoSize = true;
-            this.pluginsLbl.Location = new System.Drawing.Point(70, 446);
+            this.pluginsLbl.Location = new System.Drawing.Point(72, 320);
             this.pluginsLbl.Name = "pluginsLbl";
             this.pluginsLbl.Size = new System.Drawing.Size(47, 13);
             this.pluginsLbl.TabIndex = 20;
@@ -268,7 +255,7 @@
             // 
             this.backupsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.backupsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backupsBtn.Location = new System.Drawing.Point(-1, 279);
+            this.backupsBtn.Location = new System.Drawing.Point(1, 153);
             this.backupsBtn.Name = "backupsBtn";
             this.backupsBtn.Size = new System.Drawing.Size(184, 23);
             this.backupsBtn.TabIndex = 19;
@@ -279,7 +266,7 @@
             // 
             this.consoleBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.consoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.consoleBtn.Location = new System.Drawing.Point(-1, 235);
+            this.consoleBtn.Location = new System.Drawing.Point(1, 109);
             this.consoleBtn.Name = "consoleBtn";
             this.consoleBtn.Size = new System.Drawing.Size(184, 23);
             this.consoleBtn.TabIndex = 18;
@@ -290,7 +277,7 @@
             // 
             this.worldsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.worldsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.worldsBtn.Location = new System.Drawing.Point(-1, 257);
+            this.worldsBtn.Location = new System.Drawing.Point(1, 131);
             this.worldsBtn.Name = "worldsBtn";
             this.worldsBtn.Size = new System.Drawing.Size(184, 23);
             this.worldsBtn.TabIndex = 17;
@@ -301,7 +288,7 @@
             // 
             this.banListBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.banListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.banListBtn.Location = new System.Drawing.Point(-1, 410);
+            this.banListBtn.Location = new System.Drawing.Point(1, 284);
             this.banListBtn.Name = "banListBtn";
             this.banListBtn.Size = new System.Drawing.Size(184, 23);
             this.banListBtn.TabIndex = 16;
@@ -312,7 +299,7 @@
             // 
             this.whiteListBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.whiteListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.whiteListBtn.Location = new System.Drawing.Point(-1, 388);
+            this.whiteListBtn.Location = new System.Drawing.Point(1, 262);
             this.whiteListBtn.Name = "whiteListBtn";
             this.whiteListBtn.Size = new System.Drawing.Size(184, 23);
             this.whiteListBtn.TabIndex = 15;
@@ -323,7 +310,7 @@
             // 
             this.operatorsBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.operatorsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.operatorsBtn.Location = new System.Drawing.Point(-1, 366);
+            this.operatorsBtn.Location = new System.Drawing.Point(1, 240);
             this.operatorsBtn.Name = "operatorsBtn";
             this.operatorsBtn.Size = new System.Drawing.Size(184, 23);
             this.operatorsBtn.TabIndex = 14;
@@ -333,7 +320,7 @@
             // playersLbl
             // 
             this.playersLbl.AutoSize = true;
-            this.playersLbl.Location = new System.Drawing.Point(70, 316);
+            this.playersLbl.Location = new System.Drawing.Point(72, 190);
             this.playersLbl.Name = "playersLbl";
             this.playersLbl.Size = new System.Drawing.Size(47, 13);
             this.playersLbl.TabIndex = 13;
@@ -343,7 +330,7 @@
             // 
             this.onlinePlayersBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.onlinePlayersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.onlinePlayersBtn.Location = new System.Drawing.Point(-1, 344);
+            this.onlinePlayersBtn.Location = new System.Drawing.Point(1, 218);
             this.onlinePlayersBtn.Name = "onlinePlayersBtn";
             this.onlinePlayersBtn.Size = new System.Drawing.Size(184, 23);
             this.onlinePlayersBtn.TabIndex = 12;
@@ -354,7 +341,7 @@
             // 
             this.servFilesBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.servFilesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.servFilesBtn.Location = new System.Drawing.Point(-1, 191);
+            this.servFilesBtn.Location = new System.Drawing.Point(1, 65);
             this.servFilesBtn.Name = "servFilesBtn";
             this.servFilesBtn.Size = new System.Drawing.Size(184, 23);
             this.servFilesBtn.TabIndex = 11;
@@ -385,7 +372,7 @@
             // editServLbl
             // 
             this.editServLbl.AutoSize = true;
-            this.editServLbl.Location = new System.Drawing.Point(37, 141);
+            this.editServLbl.Location = new System.Drawing.Point(39, 15);
             this.editServLbl.Name = "editServLbl";
             this.editServLbl.Size = new System.Drawing.Size(110, 13);
             this.editServLbl.TabIndex = 8;
@@ -404,7 +391,7 @@
             // 
             this.editLaunchOptBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.editLaunchOptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editLaunchOptBtn.Location = new System.Drawing.Point(-1, 169);
+            this.editLaunchOptBtn.Location = new System.Drawing.Point(1, 43);
             this.editLaunchOptBtn.Name = "editLaunchOptBtn";
             this.editLaunchOptBtn.Size = new System.Drawing.Size(184, 23);
             this.editLaunchOptBtn.TabIndex = 7;
@@ -823,6 +810,8 @@
             // welcomeTab
             // 
             this.welcomeTab.BackColor = System.Drawing.Color.Silver;
+            this.welcomeTab.Controls.Add(this.deleteSelectedServerBtn);
+            this.welcomeTab.Controls.Add(this.selectServerByDoubleClickLbl);
             this.welcomeTab.Controls.Add(this.noServersLbl);
             this.welcomeTab.Controls.Add(this.welcomeSelectServBtn);
             this.welcomeTab.Controls.Add(this.welcomeServers);
@@ -859,6 +848,7 @@
             this.welcomeSelectServBtn.TabIndex = 12;
             this.welcomeSelectServBtn.Text = "Select";
             this.welcomeSelectServBtn.UseVisualStyleBackColor = false;
+            this.welcomeSelectServBtn.Click += new System.EventHandler(this.welcomeSelectServBtn_Click);
             // 
             // welcomeServers
             // 
@@ -870,6 +860,7 @@
             this.welcomeServers.Name = "welcomeServers";
             this.welcomeServers.Size = new System.Drawing.Size(461, 366);
             this.welcomeServers.TabIndex = 11;
+            this.welcomeServers.DoubleClick += new System.EventHandler(this.welcomeServers_DoubleClick);
             // 
             // importServerBtn
             // 
@@ -888,7 +879,7 @@
             this.serversListLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.serversListLbl.AutoSize = true;
             this.serversListLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serversListLbl.Location = new System.Drawing.Point(106, 92);
+            this.serversListLbl.Location = new System.Drawing.Point(111, 83);
             this.serversListLbl.Name = "serversListLbl";
             this.serversListLbl.Size = new System.Drawing.Size(260, 16);
             this.serversListLbl.TabIndex = 9;
@@ -923,15 +914,13 @@
             // 
             this.editServerStartOptionsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.editServerStartOptionsGroupBox.Controls.Add(this.useCommaStart);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.separatorPanServerEditStartOptions);
-            this.editServerStartOptionsGroupBox.Controls.Add(this.saveChangesServerStartOptionsBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.startServerPropertiesBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.restartServerIfCrash);
             this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRamLbl);
             this.editServerStartOptionsGroupBox.Controls.Add(this.startGBradioBtn);
             this.editServerStartOptionsGroupBox.Controls.Add(this.serverStartAllocatedRam);
             this.editServerStartOptionsGroupBox.Controls.Add(this.startMBradioBtn);
-            this.editServerStartOptionsGroupBox.Location = new System.Drawing.Point(113, 348);
+            this.editServerStartOptionsGroupBox.Location = new System.Drawing.Point(107, 348);
             this.editServerStartOptionsGroupBox.Name = "editServerStartOptionsGroupBox";
             this.editServerStartOptionsGroupBox.Size = new System.Drawing.Size(378, 164);
             this.editServerStartOptionsGroupBox.TabIndex = 26;
@@ -942,37 +931,17 @@
             // 
             this.useCommaStart.AutoSize = true;
             this.useCommaStart.ForeColor = System.Drawing.Color.DarkRed;
-            this.useCommaStart.Location = new System.Drawing.Point(111, 47);
+            this.useCommaStart.Location = new System.Drawing.Point(111, 54);
             this.useCommaStart.Name = "useCommaStart";
             this.useCommaStart.Size = new System.Drawing.Size(167, 13);
             this.useCommaStart.TabIndex = 35;
             this.useCommaStart.Text = "Please use a comma for decimals.";
             // 
-            // separatorPanServerEditStartOptions
-            // 
-            this.separatorPanServerEditStartOptions.BackColor = System.Drawing.Color.White;
-            this.separatorPanServerEditStartOptions.Location = new System.Drawing.Point(0, 127);
-            this.separatorPanServerEditStartOptions.Name = "separatorPanServerEditStartOptions";
-            this.separatorPanServerEditStartOptions.Size = new System.Drawing.Size(378, 2);
-            this.separatorPanServerEditStartOptions.TabIndex = 29;
-            // 
-            // saveChangesServerStartOptionsBtn
-            // 
-            this.saveChangesServerStartOptionsBtn.BackColor = System.Drawing.Color.LightGray;
-            this.saveChangesServerStartOptionsBtn.Enabled = false;
-            this.saveChangesServerStartOptionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveChangesServerStartOptionsBtn.Location = new System.Drawing.Point(133, 135);
-            this.saveChangesServerStartOptionsBtn.Name = "saveChangesServerStartOptionsBtn";
-            this.saveChangesServerStartOptionsBtn.Size = new System.Drawing.Size(127, 23);
-            this.saveChangesServerStartOptionsBtn.TabIndex = 28;
-            this.saveChangesServerStartOptionsBtn.Text = "Save changes";
-            this.saveChangesServerStartOptionsBtn.UseVisualStyleBackColor = false;
-            // 
             // startServerPropertiesBtn
             // 
             this.startServerPropertiesBtn.BackColor = System.Drawing.Color.LightGray;
             this.startServerPropertiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startServerPropertiesBtn.Location = new System.Drawing.Point(108, 100);
+            this.startServerPropertiesBtn.Location = new System.Drawing.Point(108, 128);
             this.startServerPropertiesBtn.Name = "startServerPropertiesBtn";
             this.startServerPropertiesBtn.Size = new System.Drawing.Size(169, 23);
             this.startServerPropertiesBtn.TabIndex = 27;
@@ -982,7 +951,7 @@
             // restartServerIfCrash
             // 
             this.restartServerIfCrash.AutoSize = true;
-            this.restartServerIfCrash.Location = new System.Drawing.Point(103, 65);
+            this.restartServerIfCrash.Location = new System.Drawing.Point(103, 91);
             this.restartServerIfCrash.Name = "restartServerIfCrash";
             this.restartServerIfCrash.Size = new System.Drawing.Size(184, 17);
             this.restartServerIfCrash.TabIndex = 26;
@@ -994,7 +963,7 @@
             // 
             this.serverStartAllocatedRamLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.serverStartAllocatedRamLbl.AutoSize = true;
-            this.serverStartAllocatedRamLbl.Location = new System.Drawing.Point(24, 26);
+            this.serverStartAllocatedRamLbl.Location = new System.Drawing.Point(24, 33);
             this.serverStartAllocatedRamLbl.Name = "serverStartAllocatedRamLbl";
             this.serverStartAllocatedRamLbl.Size = new System.Drawing.Size(154, 13);
             this.serverStartAllocatedRamLbl.TabIndex = 22;
@@ -1004,7 +973,7 @@
             // 
             this.startGBradioBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.startGBradioBtn.AutoSize = true;
-            this.startGBradioBtn.Location = new System.Drawing.Point(311, 36);
+            this.startGBradioBtn.Location = new System.Drawing.Point(311, 43);
             this.startGBradioBtn.Name = "startGBradioBtn";
             this.startGBradioBtn.Size = new System.Drawing.Size(40, 17);
             this.startGBradioBtn.TabIndex = 25;
@@ -1037,7 +1006,7 @@
             "18432",
             "19456",
             "20480"});
-            this.serverStartAllocatedRam.Location = new System.Drawing.Point(184, 23);
+            this.serverStartAllocatedRam.Location = new System.Drawing.Point(184, 30);
             this.serverStartAllocatedRam.Name = "serverStartAllocatedRam";
             this.serverStartAllocatedRam.Size = new System.Drawing.Size(121, 21);
             this.serverStartAllocatedRam.TabIndex = 23;
@@ -1049,7 +1018,7 @@
             this.startMBradioBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.startMBradioBtn.AutoSize = true;
             this.startMBradioBtn.Checked = true;
-            this.startMBradioBtn.Location = new System.Drawing.Point(311, 15);
+            this.startMBradioBtn.Location = new System.Drawing.Point(311, 22);
             this.startMBradioBtn.Name = "startMBradioBtn";
             this.startMBradioBtn.Size = new System.Drawing.Size(41, 17);
             this.startMBradioBtn.TabIndex = 24;
@@ -1063,7 +1032,7 @@
             this.startServerBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.startServerBtn.BackColor = System.Drawing.Color.Lime;
             this.startServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startServerBtn.Location = new System.Drawing.Point(265, 237);
+            this.startServerBtn.Location = new System.Drawing.Point(258, 237);
             this.startServerBtn.Name = "startServerBtn";
             this.startServerBtn.Size = new System.Drawing.Size(75, 23);
             this.startServerBtn.TabIndex = 3;
@@ -1075,7 +1044,7 @@
             this.StartServerLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StartServerLbl.AutoSize = true;
             this.StartServerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartServerLbl.Location = new System.Drawing.Point(209, 3);
+            this.StartServerLbl.Location = new System.Drawing.Point(205, 3);
             this.StartServerLbl.Name = "StartServerLbl";
             this.StartServerLbl.Size = new System.Drawing.Size(182, 13);
             this.StartServerLbl.TabIndex = 2;
@@ -1095,15 +1064,14 @@
             // 
             // serverNameLbl
             // 
-            this.serverNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.serverNameLbl.AutoSize = true;
             this.serverNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serverNameLbl.ForeColor = System.Drawing.Color.White;
-            this.serverNameLbl.Location = new System.Drawing.Point(165, 23);
+            this.serverNameLbl.Location = new System.Drawing.Point(3, 0);
             this.serverNameLbl.Name = "serverNameLbl";
-            this.serverNameLbl.Size = new System.Drawing.Size(122, 16);
+            this.serverNameLbl.Size = new System.Drawing.Size(426, 60);
             this.serverNameLbl.TabIndex = 1;
             this.serverNameLbl.Text = "No server selected";
+            this.serverNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -1116,13 +1084,14 @@
             // 
             // serverRunning
             // 
-            this.serverRunning.AutoSize = true;
+            this.serverRunning.Dock = System.Windows.Forms.DockStyle.Fill;
             this.serverRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serverRunning.Location = new System.Drawing.Point(200, 11);
+            this.serverRunning.Location = new System.Drawing.Point(0, 0);
             this.serverRunning.Name = "serverRunning";
-            this.serverRunning.Size = new System.Drawing.Size(52, 16);
+            this.serverRunning.Size = new System.Drawing.Size(433, 35);
             this.serverRunning.TabIndex = 0;
             this.serverRunning.Text = "Offline";
+            this.serverRunning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // hideBorderPan1
             // 
@@ -1130,6 +1099,52 @@
             this.hideBorderPan1.Name = "hideBorderPan1";
             this.hideBorderPan1.Size = new System.Drawing.Size(7, 562);
             this.hideBorderPan1.TabIndex = 16;
+            // 
+            // selectedServerBtns
+            // 
+            this.selectedServerBtns.Controls.Add(this.serverPropertiesBtn);
+            this.selectedServerBtns.Controls.Add(this.editLaunchOptBtn);
+            this.selectedServerBtns.Controls.Add(this.reinstallServerBtn);
+            this.selectedServerBtns.Controls.Add(this.editServLbl);
+            this.selectedServerBtns.Controls.Add(this.moreLbl);
+            this.selectedServerBtns.Controls.Add(this.servFilesBtn);
+            this.selectedServerBtns.Controls.Add(this.managePluginsBtn);
+            this.selectedServerBtns.Controls.Add(this.onlinePlayersBtn);
+            this.selectedServerBtns.Controls.Add(this.pluginsLbl);
+            this.selectedServerBtns.Controls.Add(this.playersLbl);
+            this.selectedServerBtns.Controls.Add(this.backupsBtn);
+            this.selectedServerBtns.Controls.Add(this.operatorsBtn);
+            this.selectedServerBtns.Controls.Add(this.consoleBtn);
+            this.selectedServerBtns.Controls.Add(this.whiteListBtn);
+            this.selectedServerBtns.Controls.Add(this.worldsBtn);
+            this.selectedServerBtns.Controls.Add(this.banListBtn);
+            this.selectedServerBtns.Enabled = false;
+            this.selectedServerBtns.Location = new System.Drawing.Point(-2, 127);
+            this.selectedServerBtns.Name = "selectedServerBtns";
+            this.selectedServerBtns.Size = new System.Drawing.Size(185, 435);
+            this.selectedServerBtns.TabIndex = 27;
+            // 
+            // selectServerByDoubleClickLbl
+            // 
+            this.selectServerByDoubleClickLbl.AutoSize = true;
+            this.selectServerByDoubleClickLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectServerByDoubleClickLbl.Location = new System.Drawing.Point(177, 103);
+            this.selectServerByDoubleClickLbl.Name = "selectServerByDoubleClickLbl";
+            this.selectServerByDoubleClickLbl.Size = new System.Drawing.Size(125, 12);
+            this.selectServerByDoubleClickLbl.TabIndex = 14;
+            this.selectServerByDoubleClickLbl.Text = "Select one by double clicking!";
+            // 
+            // deleteSelectedServerBtn
+            // 
+            this.deleteSelectedServerBtn.BackColor = System.Drawing.Color.LightGray;
+            this.deleteSelectedServerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteSelectedServerBtn.Location = new System.Drawing.Point(480, 317);
+            this.deleteSelectedServerBtn.Name = "deleteSelectedServerBtn";
+            this.deleteSelectedServerBtn.Size = new System.Drawing.Size(96, 23);
+            this.deleteSelectedServerBtn.TabIndex = 15;
+            this.deleteSelectedServerBtn.Text = "Delete selected";
+            this.deleteSelectedServerBtn.UseVisualStyleBackColor = false;
+            this.deleteSelectedServerBtn.Click += new System.EventHandler(this.deleteSelectedServerBtn_Click);
             // 
             // MainForm
             // 
@@ -1166,9 +1181,9 @@
             this.editServerStartOptionsGroupBox.ResumeLayout(false);
             this.editServerStartOptionsGroupBox.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.selectedServerBtns.ResumeLayout(false);
+            this.selectedServerBtns.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1241,9 +1256,7 @@
         private System.Windows.Forms.ComboBox serverStartAllocatedRam;
         private System.Windows.Forms.RadioButton startMBradioBtn;
         private System.Windows.Forms.Button startServerPropertiesBtn;
-        private System.Windows.Forms.Button saveChangesServerStartOptionsBtn;
         private System.Windows.Forms.Button importServerBtn;
-        private System.Windows.Forms.Panel separatorPanServerEditStartOptions;
         private System.Windows.Forms.Label autoDirectoryLbl;
         private System.Windows.Forms.CheckBox autoDirectory;
         private System.Windows.Forms.Panel panel4;
@@ -1255,6 +1268,9 @@
         private System.Windows.Forms.Label noServersLbl;
         private System.Windows.Forms.Label useCommaInstall;
         private System.Windows.Forms.Label useCommaStart;
+        private System.Windows.Forms.Panel selectedServerBtns;
+        private System.Windows.Forms.Label selectServerByDoubleClickLbl;
+        private System.Windows.Forms.Button deleteSelectedServerBtn;
     }
 }
 

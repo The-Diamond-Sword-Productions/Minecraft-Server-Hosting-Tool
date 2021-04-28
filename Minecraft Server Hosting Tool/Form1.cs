@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Minecraft_Server_Hosting_Tool
@@ -20,6 +21,9 @@ namespace Minecraft_Server_Hosting_Tool
         Timer t1 = new Timer(); //timer for animations for sidebar
         public string openedPan = "welcomePan"; //string to know which panel is visible
         public bool installing = false; //just to know if server is installing when application exit
+        public bool serverSelected = false;
+        public string selectedServerName = null;
+        public string selectedServerPath = null;
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
@@ -1073,6 +1077,12 @@ namespace Minecraft_Server_Hosting_Tool
         private void editLaunchOptBtn_Click(object sender, EventArgs e)
         {
             MainTabControl.SelectedTab = Start;
+            string RAM = File.ReadLines(selectedServerPath + "\\run.bat").Skip(0).Take(1).First();
+            if (RAM.Contains("M"))
+                startMBradioBtn.Checked = true;
+            else
+                startGBradioBtn.Checked = true;
+            serverStartAllocatedRam.Text = Regex.Replace(RAM, "[^0-9,]", "");
         }
 
         private void startMBradioBtn_CheckedChanged(object sender, EventArgs e)
@@ -1094,7 +1104,7 @@ namespace Minecraft_Server_Hosting_Tool
                 serverStartAllocatedRam.Items.Add("5120");
                 serverStartAllocatedRam.Items.Add("6144");
                 serverStartAllocatedRam.Items.Add("7168");
-                allocatedRam.Items.Add("8192");
+                serverStartAllocatedRam.Items.Add("8192");
                 serverStartAllocatedRam.Items.Add("9216");
                 serverStartAllocatedRam.Items.Add("10240");
                 serverStartAllocatedRam.Items.Add("11264");
@@ -1139,6 +1149,7 @@ namespace Minecraft_Server_Hosting_Tool
                 serverStartAllocatedRam.Items.Add("19");
                 serverStartAllocatedRam.Items.Add("20");
             }
+            rewriteRunBat();
         }
 
         private void autoDirectory_CheckedChanged(object sender, EventArgs e)
@@ -1158,7 +1169,7 @@ namespace Minecraft_Server_Hosting_Tool
 
         private void allocatedRam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!double.TryParse(allocatedRam.Text, out double parsedValue))
+            if (!double.TryParse(allocatedRam.Text, out double parsedValue) && !string.IsNullOrWhiteSpace(allocatedRam.Text))
             {
                 allocatedRam.Text = allocatedRam.Text.Remove(allocatedRam.Text.Length - 1, 1);
                 allocatedRam.SelectionStart = allocatedRam.Text.Length;
@@ -1168,14 +1179,25 @@ namespace Minecraft_Server_Hosting_Tool
 
         private void serverStartAllocatedRam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!double.TryParse(serverStartAllocatedRam.Text, out double parsedValue))
+            if (!double.TryParse(serverStartAllocatedRam.Text, out double parsedValue) && !string.IsNullOrWhiteSpace(serverStartAllocatedRam.Text))
             {
                 serverStartAllocatedRam.Text = serverStartAllocatedRam.Text.Remove(serverStartAllocatedRam.Text.Length - 1, 1);
                 serverStartAllocatedRam.SelectionStart = serverStartAllocatedRam.Text.Length;
                 serverStartAllocatedRam.SelectionLength = 0;
             }
+            rewriteRunBat();
         }
+        private async void rewriteRunBat()
+        {
+            string MG = "M";
+            if (startGBradioBtn.Checked) { MG = "G"; }
 
+            using (StreamWriter sw = File.CreateText(selectedServerPath + @"\" + "run.bat"))
+            {
+                await sw.WriteLineAsync("java -Xmx" + serverStartAllocatedRam.Text + MG + " -jar server.jar nogui");
+                await sw.WriteLineAsync("PAUSE");
+            }
+        }
         private void serverName_TextChanged(object sender, EventArgs e)
         {
             if (serverName.Text.Contains("|"))
@@ -1186,6 +1208,43 @@ namespace Minecraft_Server_Hosting_Tool
             }
             if (autoDirectory.Checked)
                 serverInstallPath.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MSHT\\servers\\" + serverName.Text;
+        }
+        private void welcomeSelectServBtn_Click(object sender, EventArgs e)
+        {
+            selectServer();
+        }
+        private void selectServer()
+        {
+            selectedServerName = welcomeServers.SelectedItem.ToString().Split(" | ".ToCharArray())[0];
+            selectedServerPath = welcomeServers.SelectedItem.ToString();
+            int index = selectedServerPath.IndexOf('|') + 1;
+            selectedServerPath = selectedServerPath.Remove(0, index);
+            serverSelected = true;
+            barLbl.Text = "Minecraft Server Hosting Tool - " + selectedServerName;
+            serverNameLbl.Text = selectedServerName;
+            selectedServerBtns.Enabled = true;
+        }
+
+        private void welcomeServers_DoubleClick(object sender, EventArgs e)
+        {
+            selectServer();
+        }
+
+        private void deleteSelectedServerBtn_Click(object sender, EventArgs e)
+        {
+            string tempPath = welcomeServers.SelectedItem.ToString();
+            int index = tempPath.IndexOf('|') + 1;
+            tempPath = tempPath.Remove(0, index);
+            DialogResult valid = MessageBox.Show("Every files / folders in the server's directory (" + tempPath + ") will be deleted, and the server's folder itself.\n\nThis action cannot be reverted.\n\nDo you want to continue?", "Validation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (valid == DialogResult.No)
+                return;
+            if (!Directory.Exists(tempPath))
+            {
+                MessageBox.Show("It seems like this server has already been deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            welcomeServers.Items.RemoveAt(welcomeServers.SelectedIndex);
+            Directory.Delete(tempPath, true);
         }
     }
 }
